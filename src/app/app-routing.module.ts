@@ -7,6 +7,7 @@ import { HeaderComponent } from './header/header.component';
 import { LoginComponent } from './login/login.component';
 import { PanierComponent } from './panier/panier.component';
 import { RegisterComponent } from './register/register.component';
+import { UserBarVerticalComponent } from './user-bar-vertical/user-bar-vertical.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 
 const routes: Routes = [
@@ -18,7 +19,8 @@ const routes: Routes = [
   {path: 'editProfile', component: EditProfileComponent},
   {path: 'header', component: HeaderComponent},
   {path: 'footer', component: FooterComponent},
-{path: '', redirectTo: '/about', pathMatch: 'full'}];
+{path: '', redirectTo: '/about', pathMatch: 'full'},
+{path: 'userBarVertical', component: UserBarVerticalComponent},];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

@@ -1,224 +1,464 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta
+      name="description"
+      content="Start your development with a Dashboard for Bootstrap 4."
+    />
+    <meta name="author" content="Creative Tim" />
+    <title>Impact Dashboard - Register</title>
 
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="Start your development with a Dashboard for Bootstrap 4.">
-  <meta name="author" content="Creative Tim">
-  <title>Impact Dashboard - Register</title>
+    <!-- Canonical SEO -->
+    <link
+      rel="canonical"
+      href="https://www.creative-tim.com/product/impact-design-system"
+    />
 
-  <!-- Canonical SEO -->
-  <link rel="canonical" href="https://www.creative-tim.com/product/impact-design-system" />
+    <!--  Social tags      -->
+    <meta
+      name="keywords"
+      content="impact design system, design system, login, form, table, tables, calendar, card, cards, navbar, modal, icons, icons, map, chat, carousel, menu, datepicker, gallery, slider, date, sidebar, social, dropdown, search, tab, nav, footer, date picker, forms, tabs, time, button, select, input, timeline, cart, car, fullcalendar, about us, invoice, account, chat, log in, blog, profile, portfolio, landing page, ecommerce, shop, landing, register, app, contact, one page, sign up, signup, store, bootstrap 4, bootstrap4, dashboard, bootstrap 4 dashboard, bootstrap 4 design, bootstrap 4 system, bootstrap 4, bootstrap 4 uit kit, bootstrap 4 kit, impact, impact ui kit, creative tim, html kit, html css template, web template, bootstrap, bootstrap 4, css3 template, frontend, responsive bootstrap template, bootstrap ui kit, responsive ui kit, impact dashboard"
+    />
+    <meta
+      name="description"
+      content="Kick-Start Your Development With An Awesome Design System carefully designed for your online business showcase. It comes as a complete solution, with front pages and dashboard pages included."
+    />
 
-  <!--  Social tags      -->
-  <meta name="keywords" content="impact design system, design system, login, form, table, tables, calendar, card, cards, navbar, modal, icons, icons, map, chat, carousel, menu, datepicker, gallery, slider, date, sidebar, social, dropdown, search, tab, nav, footer, date picker, forms, tabs, time, button, select, input, timeline, cart, car, fullcalendar, about us, invoice, account, chat, log in, blog, profile, portfolio, landing page, ecommerce, shop, landing, register, app, contact, one page, sign up, signup, store, bootstrap 4, bootstrap4, dashboard, bootstrap 4 dashboard, bootstrap 4 design, bootstrap 4 system, bootstrap 4, bootstrap 4 uit kit, bootstrap 4 kit, impact, impact ui kit, creative tim, html kit, html css template, web template, bootstrap, bootstrap 4, css3 template, frontend, responsive bootstrap template, bootstrap ui kit, responsive ui kit, impact dashboard">
-  <meta name="description" content="Kick-Start Your Development With An Awesome Design System carefully designed for your online business showcase. It comes as a complete solution, with front pages and dashboard pages included.">
+    <!-- Schema.org markup for Google+ -->
+    <meta itemprop="name" content="Impact Design System by Themesberg" />
+    <meta
+      itemprop="description"
+      content="Kick-Start Your Development With An Awesome Design System carefully designed for your online business showcase. It comes as a complete solution, with front pages and dashboard pages included."
+    />
 
-  <!-- Schema.org markup for Google+ -->
-  <meta itemprop="name" content="Impact Design System by Themesberg">
-  <meta itemprop="description" content="Kick-Start Your Development With An Awesome Design System carefully designed for your online business showcase. It comes as a complete solution, with front pages and dashboard pages included.">
+    <meta
+      itemprop="image"
+      content="https://themesberg.s3.us-east-2.amazonaws.com/public/products/impact-design-system/impact-design-system-thumbnail.jpg"
+    />
 
-  <meta itemprop="image" content="https://themesberg.s3.us-east-2.amazonaws.com/public/products/impact-design-system/impact-design-system-thumbnail.jpg">
+    <!-- Twitter Card data -->
+    <meta name="twitter:card" content="product" />
+    <meta name="twitter:site" content="@themesberg" />
+    <meta name="twitter:title" content="Impact Design System by Themesberg" />
 
-  <!-- Twitter Card data -->
-  <meta name="twitter:card" content="product">
-  <meta name="twitter:site" content="@themesberg">
-  <meta name="twitter:title" content="Impact Design System by Themesberg">
+    <meta
+      name="twitter:description"
+      content="Kick-Start Your Development With An Awesome Design System carefully designed for your online business showcase. It comes as a complete solution, with front pages and dashboard pages included."
+    />
+    <meta name="twitter:creator" content="@themesberg" />
+    <meta
+      name="twitter:image"
+      content="https://themesberg.s3.us-east-2.amazonaws.com/public/products/impact-design-system/impact-design-system-thumbnail.jpg"
+    />
 
-  <meta name="twitter:description" content="Kick-Start Your Development With An Awesome Design System carefully designed for your online business showcase. It comes as a complete solution, with front pages and dashboard pages included.">
-  <meta name="twitter:creator" content="@themesberg">
-  <meta name="twitter:image" content="https://themesberg.s3.us-east-2.amazonaws.com/public/products/impact-design-system/impact-design-system-thumbnail.jpg">
+    <!-- Open Graph data -->
+    <meta property="fb:app_id" content="655968634437471" />
+    <meta property="og:title" content="Impact Design System by Themesberg" />
+    <meta property="og:type" content="article" />
+    <meta
+      property="og:url"
+      content="https://demo.themesberg.com/impact-design-system/"
+    />
+    <meta
+      property="og:image"
+      content="https://themesberg.s3.us-east-2.amazonaws.com/public/products/impact-design-system/impact-design-system-thumbnail.jpg"
+    />
+    <meta
+      property="og:description"
+      content="Kick-Start Your Development With An Awesome Design System carefully designed for your online business showcase. It comes as a complete solution, with front pages and dashboard pages included."
+    />
+    <meta property="og:site_name" content="Themesberg" />
 
+    <!-- Favicon -->
+    <link
+      rel="apple-touch-icon"
+      sizes="120x120"
+      href="../../assets/img/favicon/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="../../assets/img/favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="../../assets/img/favicon/favicon-16x16.png"
+    />
+    <link rel="manifest" href="../../assets/img/favicon/site.webmanifest" />
+    <link
+      rel="mask-icon"
+      href="../../assets/img/favicon/safari-pinned-tab.svg"
+      color="#ffffff"
+    />
+    <meta name="msapplication-TileColor" content="#ffffff" />
+    <meta name="theme-color" content="#ffffff" />
 
-  <!-- Open Graph data -->
-  <meta property="fb:app_id" content="655968634437471">
-  <meta property="og:title" content="Impact Design System by Themesberg" />
-  <meta property="og:type" content="article" />
-  <meta property="og:url" content="https://demo.themesberg.com/impact-design-system/" />
-  <meta property="og:image" content="https://themesberg.s3.us-east-2.amazonaws.com/public/products/impact-design-system/impact-design-system-thumbnail.jpg"/>
-  <meta property="og:description" content="Kick-Start Your Development With An Awesome Design System carefully designed for your online business showcase. It comes as a complete solution, with front pages and dashboard pages included." />
-  <meta property="og:site_name" content="Themesberg" />
+    <!-- Fonts -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700"
+    />
+  </head>
 
-  <!-- Favicon -->
-  <link rel="apple-touch-icon" sizes="120x120" href="../../assets/img/favicon/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="../../assets/img/favicon/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="../../assets/img/favicon/favicon-16x16.png">
-  <link rel="manifest" href="../../assets/img/favicon/site.webmanifest">
-  <link rel="mask-icon" href="../../assets/img/favicon/safari-pinned-tab.svg" color="#ffffff">
-  <meta name="msapplication-TileColor" content="#ffffff">
-  <meta name="theme-color" content="#ffffff">
-
-  <!-- Fonts -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700">
-</head>
-
-
-<body class="bg-white">
-
-  <!-- Main content -->
-  <div class="main-content">
-    <!-- Header -->
-    <div class="header bg-gradient-primary py-7 py-lg-8 pt-lg-9">
-      
-      <div class="container">
-        <div class = "card-columns">
-       <!-- <div class="row align-items-center justify-content-xl-between">
-                  <div class="col-sm-3"> -->
-                    <div class="card h-100" >
-                      <a href="#"><img class="card-img-top"  src="/assets/img/vintage-76.jpg" alt="Card image cap"></a>
-                      <div class="card-body">
-                        <a href="#"><h4 class="card-title">Razer Blade 15 Advanced Model - PC Portable Gaming 15.6, UHD 144Hz - i9 - NVIDIA GeForce RTX 3080 Ti, 32GB DDR5...</h4></a>
-                        <a href="#" class="card-text"><h1>4 799,99€</h1></a>
-                        <h5 class="card-title" style = "color:#120ab3;">Recevez-le <strong>jeudi 6 octobre</strong>
-                          Livraison GRATUITE </h5>
-                      </div>
-                   </div>
-                <!--  </div> -->
-                  
-
-                <!--  <div class="col-sm-3"> -->
-                    <div class="card h-100" >
-                      <a href="#"><img class="card-img-top"  src="https://m.media-amazon.com/images/I/71EbDZ6ymQL._AC_UL480_QL65_.jpg" alt="Card image cap"></a>
-                      <div class="card-body">
-                        <a href="#"><h4 class="card-title">Ordinateur PC Portable Thomson Neo 14,1 Pouces, Celeron N3350, 4Gb RAM, 64Gb Stockage SSD, Windows 10, AZERTY ...</h4></a>
-                        <a href="#" class="card-text"><h1>189,99€</h1></a>
-                        <h5 class="card-title" style = "color:#120ab3;">Recevez-le <strong>jeudi 6 octobre</strong>
-                          Livraison GRATUITE </h5>
-                      </div>
-                    </div>
-                 <!-- </div> -->
-
-                 <!-- <div class="col-sm-3"> -->
-                    <div class="card h-100" >
-                      <a href="#"><img class="card-img-top"  src="https://m.media-amazon.com/images/I/71ZX-nnMVeL._AC_UL480_QL65_.jpg" alt="Card image cap"></a>
-                      <div class="card-body">
-                        <a href="#"><h4 class="card-title">HP Laptop 15s-fq0001sf PC Portable 15.6" FHD (Intel Celeron, RAM 4 Go, SSD 128 Go, AZERTY, Windows 11 Famille en Mode S) ...</h4></a>
-                        <a href="#" class="card-text"><h1>349,00€</h1></a>
-                        <h5 class="card-title" style = "color:#120ab3;">Recevez-le <strong>jeudi 6 octobre</strong>
-                          Livraison GRATUITE </h5>
-                      </div>
-                    </div>
-                 <!-- </div> -->
-
-                 <!-- <div class="col-sm-3"> -->
-                    <div class="card h-100" >
-                      <a href="#"><img class="card-img-top"  src="https://m.media-amazon.com/images/I/81Y0-3qm+uL._AC_UL480_QL65_.jpg" alt="Card image cap"></a>
-                      <div class="card-body">
-                        <a href="#"><h4 class="card-title">HP 15-dw3267ng 15.6" 1920 x 1080 Pixels Intel Core i7-11xxx 16 GB 512 GB SSD NVIDIA GeForce MX450 Windows 10 Home...</h4></a>
-                        <a href="#" class="card-text"><h1>966,83€</h1></a>
-                        <h5 class="card-title" style = "color:#120ab3;">Recevez-le <strong>jeudi 6 octobre</strong>
-                          Livraison GRATUITE </h5>
-                      </div>
-                    </div>
-                  
-
-                  <div class="card h-100" >
-                    <a href="#"><img class="card-img-top"  src="https://m.media-amazon.com/images/I/81Y0-3qm+uL._AC_UL480_QL65_.jpg" alt="Card image cap"></a>
-                    <div class="card-body">
-                      <a href="#"><h4 class="card-title">HP 15-dw3267ng 15.6" 1920 x 1080 Pixels Intel Core i7-11xxx 16 GB 512 GB SSD NVIDIA GeForce MX450 Windows 10 Home...</h4></a>
-                      <a href="#" class="card-text"><h1>966,83€</h1></a>
-                      <h5 class="card-title" style = "color:#120ab3;">Recevez-le <strong>jeudi 6 octobre</strong>
-                        Livraison GRATUITE </h5>
-                    </div>
-                  </div>
-                
-
-                <div class="card h-100" >
-                  <a href="#"><img class="card-img-top"  src="https://m.media-amazon.com/images/I/61hofxR1GQL._AC_UL480_QL65_.jpg" alt="Card image cap"></a>
-                  <div class="card-body">
-                    <a href="#"><h4 class="card-title">Razer Blade 15 Advanced Model - PC Portable Gaming 15.6, UHD 144Hz - i9 - NVIDIA GeForce RTX 3080 Ti, 32GB DDR5...</h4></a>
-                    <a href="#" class="card-text"><h1>4 799,99€</h1></a>
-                    <h5 class="card-title" style = "color:#120ab3;">Recevez-le <strong>jeudi 6 octobre</strong>
-                      Livraison GRATUITE </h5>
-                  </div>
+  <body class="bg-white">
+    <!-- Main content -->
+    <div class="main-content">
+      <!-- Header -->
+      <div class="header bg-gradient-primary py-7 py-lg-8">
+        <div class="container">
+          <nav class="navbar navbar-horizontal navbar-expand-lg navbar-light mt--3">
+            <div class="container-fluid justify-content-center">
+                  <ul class="nav justify-content-center ">
+                    
+                    <li class="nav-item">
+                      <a class="nav-link text-white" href="#"><h2 class = "text-white"><u>Femmes</u></h2></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#"><h2 class = "text-white"><u>Homes</u></h2></a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link text-white" href="#"><h2 class = "text-white"><u>Enfants</u></h2></a>
+                      </li>
+                  </ul>
                 </div>
-               
-    
-              
-                <div class="card h-100" >
-                  <a href="#"><img class="card-img-top"  src="https://m.media-amazon.com/images/I/71EbDZ6ymQL._AC_UL480_QL65_.jpg" alt="Card image cap"></a>
-                  <div class="card-body">
-                    <a href="#"><h4 class="card-title">Ordinateur PC Portable Thomson Neo 14,1 Pouces, Celeron N3350, 4Gb RAM, 64Gb Stockage SSD, Windows 10, AZERTY ...</h4></a>
-                    <a href="#" class="card-text"><h1>189,99€</h1></a>
-                    <h5 class="card-title" style = "color:#120ab3;">Recevez-le <strong>jeudi 6 octobre</strong>
-                      Livraison GRATUITE </h5>
-                  </div>
-                </div>
-              
-    
-              
-                <div class="card h-100" >
-                  <a href="#"><img class="card-img-top"  src="https://m.media-amazon.com/images/I/71ZX-nnMVeL._AC_UL480_QL65_.jpg" alt="Card image cap"></a>
-                  <div class="card-body">
-                    <a href="#"><h4 class="card-title">HP Laptop 15s-fq0001sf PC Portable 15.6" FHD (Intel Celeron, RAM 4 Go, SSD 128 Go, AZERTY, Windows 11 Famille en Mode S) ...</h4></a>
-                    <a href="#" class="card-text"><h1>349,00€</h1></a>
-                    <h5 class="card-title" style = "color:#120ab3;">Recevez-le <strong>jeudi 6 octobre</strong>
-                      Livraison GRATUITE </h5>
-                  </div>
-                </div>
-              
-    
-              
-                <div class="card h-100" >
-                  <a href="#"><img class="card-img-top" src="https://m.media-amazon.com/images/I/81Y0-3qm+uL._AC_UL480_QL65_.jpg" alt="Card image cap"></a>
-                  <div class="card-body">
-                    <a href="#"><h4 class="card-title">HP 15-dw3267ng 15.6" 1920 x 1080 Pixels Intel Core i7-11xxx 16 GB 512 GB SSD NVIDIA GeForce MX450 Windows 10 Home...</h4></a>
-                    <a href="#" class="card-text"><h1>966,83€</h1></a>
-                    <h5 class="card-title" style = "color:#120ab3;">Recevez-le <strong>jeudi 6 octobre</strong>
-                      Livraison GRATUITE </h5>
-                  </div>
-                </div>
-
-                <div class="card h-100" >
-                  <a href="#"><img class="card-img-top"  src="https://m.media-amazon.com/images/I/71ZX-nnMVeL._AC_UL480_QL65_.jpg" alt="Card image cap"></a>
-                  <div class="card-body">
-                    <a href="#"><h4 class="card-title">HP Laptop 15s-fq0001sf PC Portable 15.6" FHD (Intel Celeron, RAM 4 Go, SSD 128 Go, AZERTY, Windows 11 Famille en Mode S) ...</h4></a>
-                    <a href="#" class="card-text"><h1>349,00€</h1></a>
-                    <h5 class="card-title" style = "color:#120ab3;">Recevez-le <strong>jeudi 6 octobre</strong>
-                      Livraison GRATUITE </h5>
-                  </div>
-                </div>
-              
-    
-              
-                <div class="card h-100" >
-                  <a href="#"><img class="card-img-top" src="https://m.media-amazon.com/images/I/81Y0-3qm+uL._AC_UL480_QL65_.jpg" alt="Card image cap"></a>
-                  <div class="card-body">
-                    <a href="#"><h4 class="card-title">HP 15-dw3267ng 15.6" 1920 x 1080 Pixels Intel Core i7-11xxx 16 GB 512 GB SSD NVIDIA GeForce MX450 Windows 10 Home...</h4></a>
-                    <a href="#" class="card-text"><h1>966,83€</h1></a>
-                    <h5 class="card-title" style = "color:#120ab3;">Recevez-le <strong>jeudi 6 octobre</strong>
-                      Livraison GRATUITE </h5>
-                  </div>
-                </div>
-
-                <div class="card h-100" >
-                  <a href="#"><img class="card-img-top"  src="https://m.media-amazon.com/images/I/71ZX-nnMVeL._AC_UL480_QL65_.jpg" alt="Card image cap"></a>
-                  <div class="card-body">
-                    <a href="#"><h4 class="card-title">HP Laptop 15s-fq0001sf PC Portable 15.6" FHD (Intel Celeron, RAM 4 Go, SSD 128 Go, AZERTY, Windows 11 Famille en Mode S) ...</h4></a>
-                    <a href="#" class="card-text"><h1>349,00€</h1></a>
-                    <h5 class="card-title" style = "color:#120ab3;">Recevez-le <strong>jeudi 6 octobre</strong>
-                      Livraison GRATUITE </h5>
-                  </div>
-                </div>
-              
-    
-              
-                <div class="card h-100" >
-                  <a href="#"><img class="card-img-top" src="https://m.media-amazon.com/images/I/81Y0-3qm+uL._AC_UL480_QL65_.jpg" alt="Card image cap"></a>
-                  <div class="card-body">
-                    <a href="#"><h4 class="card-title">HP 15-dw3267ng 15.6" 1920 x 1080 Pixels Intel Core i7-11xxx 16 GB 512 GB SSD NVIDIA GeForce MX450 Windows 10 Home...</h4></a>
-                    <a href="#" class="card-text"><h1>966,83€</h1></a>
-                    <h5 class="card-title" style = "color:#120ab3;">Recevez-le <strong>jeudi 6 octobre</strong>
-                      Livraison GRATUITE </h5>
-                  </div>
-                </div>
+        
+          </nav>
         </div>
-</div>  
+      </div>
+
+      <div class = "container mt--7">
+        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="/assets/img/car1.jpg" class="d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="/assets/img/car2.jpg" class="d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="/assets/img/car3.jpg" class="d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="/assets/img/car4.jpg" class="d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="/assets/img/car5.jpg" class="d-block w-100" alt="...">
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
 
       </div>
-      
-    </div>
-</body>
 
+
+      <div class="container mt-7">
+        <div class="card-columns">
+          <!-- <div class="row align-items-center justify-content-xl-between">
+                <div class="col-sm-3"> -->
+          <div class="card h-100">
+            <a href="#"
+              ><img
+                class="card-img-top"
+                src="/assets/img/vintage-76.jpg"
+                alt="Card image cap"
+            /></a>
+            <div class="card-body">
+              <a href="#"
+                ><h4 class="card-title">
+                  Razer Blade 15 Advanced Model - PC Portable Gaming 15.6, UHD
+                  144Hz - i9 - NVIDIA GeForce RTX 3080 Ti, 32GB DDR5...
+                </h4></a
+              >
+              <a href="#" class="card-text"><h1>4 799,99€</h1></a>
+              <h5 class="card-title" style="color: #120ab3">
+                Recevez-le <strong>jeudi 6 octobre</strong> Livraison GRATUITE
+              </h5>
+            </div>
+          </div>
+          <!--  </div> -->
+
+          <!--  <div class="col-sm-3"> -->
+          <div class="card h-100">
+            <a href="#"
+              ><img
+                class="card-img-top"
+                src="https://m.media-amazon.com/images/I/71EbDZ6ymQL._AC_UL480_QL65_.jpg"
+                alt="Card image cap"
+            /></a>
+            <div class="card-body">
+              <a href="#"
+                ><h4 class="card-title">
+                  Ordinateur PC Portable Thomson Neo 14,1 Pouces, Celeron N3350,
+                  4Gb RAM, 64Gb Stockage SSD, Windows 10, AZERTY ...
+                </h4></a
+              >
+              <a href="#" class="card-text"><h1>189,99€</h1></a>
+              <h5 class="card-title" style="color: #120ab3">
+                Recevez-le <strong>jeudi 6 octobre</strong> Livraison GRATUITE
+              </h5>
+            </div>
+          </div>
+          <!-- </div> -->
+
+          <!-- <div class="col-sm-3"> -->
+          <div class="card h-100">
+            <a href="#"
+              ><img
+                class="card-img-top"
+                src="https://m.media-amazon.com/images/I/71ZX-nnMVeL._AC_UL480_QL65_.jpg"
+                alt="Card image cap"
+            /></a>
+            <div class="card-body">
+              <a href="#"
+                ><h4 class="card-title">
+                  HP Laptop 15s-fq0001sf PC Portable 15.6" FHD (Intel Celeron,
+                  RAM 4 Go, SSD 128 Go, AZERTY, Windows 11 Famille en Mode S)
+                  ...
+                </h4></a
+              >
+              <a href="#" class="card-text"><h1>349,00€</h1></a>
+              <h5 class="card-title" style="color: #120ab3">
+                Recevez-le <strong>jeudi 6 octobre</strong> Livraison GRATUITE
+              </h5>
+            </div>
+          </div>
+          <!-- </div> -->
+
+          <!-- <div class="col-sm-3"> -->
+          <div class="card h-100">
+            <a href="#"
+              ><img
+                class="card-img-top"
+                src="https://m.media-amazon.com/images/I/81Y0-3qm+uL._AC_UL480_QL65_.jpg"
+                alt="Card image cap"
+            /></a>
+            <div class="card-body">
+              <a href="#"
+                ><h4 class="card-title">
+                  HP 15-dw3267ng 15.6" 1920 x 1080 Pixels Intel Core i7-11xxx 16
+                  GB 512 GB SSD NVIDIA GeForce MX450 Windows 10 Home...
+                </h4></a
+              >
+              <a href="#" class="card-text"><h1>966,83€</h1></a>
+              <h5 class="card-title" style="color: #120ab3">
+                Recevez-le <strong>jeudi 6 octobre</strong> Livraison GRATUITE
+              </h5>
+            </div>
+          </div>
+
+          <div class="card h-100">
+            <a href="#"
+              ><img
+                class="card-img-top"
+                src="https://m.media-amazon.com/images/I/81Y0-3qm+uL._AC_UL480_QL65_.jpg"
+                alt="Card image cap"
+            /></a>
+            <div class="card-body">
+              <a href="#"
+                ><h4 class="card-title">
+                  HP 15-dw3267ng 15.6" 1920 x 1080 Pixels Intel Core i7-11xxx 16
+                  GB 512 GB SSD NVIDIA GeForce MX450 Windows 10 Home...
+                </h4></a
+              >
+              <a href="#" class="card-text"><h1>966,83€</h1></a>
+              <h5 class="card-title" style="color: #120ab3">
+                Recevez-le <strong>jeudi 6 octobre</strong> Livraison GRATUITE
+              </h5>
+            </div>
+          </div>
+
+          <div class="card h-100">
+            <a href="#"
+              ><img
+                class="card-img-top"
+                src="https://m.media-amazon.com/images/I/61hofxR1GQL._AC_UL480_QL65_.jpg"
+                alt="Card image cap"
+            /></a>
+            <div class="card-body">
+              <a href="#"
+                ><h4 class="card-title">
+                  Razer Blade 15 Advanced Model - PC Portable Gaming 15.6, UHD
+                  144Hz - i9 - NVIDIA GeForce RTX 3080 Ti, 32GB DDR5...
+                </h4></a
+              >
+              <a href="#" class="card-text"><h1>4 799,99€</h1></a>
+              <h5 class="card-title" style="color: #120ab3">
+                Recevez-le <strong>jeudi 6 octobre</strong> Livraison GRATUITE
+              </h5>
+            </div>
+          </div>
+
+          <div class="card h-100">
+            <a href="#"
+              ><img
+                class="card-img-top"
+                src="https://m.media-amazon.com/images/I/71EbDZ6ymQL._AC_UL480_QL65_.jpg"
+                alt="Card image cap"
+            /></a>
+            <div class="card-body">
+              <a href="#"
+                ><h4 class="card-title">
+                  Ordinateur PC Portable Thomson Neo 14,1 Pouces, Celeron N3350,
+                  4Gb RAM, 64Gb Stockage SSD, Windows 10, AZERTY ...
+                </h4></a
+              >
+              <a href="#" class="card-text"><h1>189,99€</h1></a>
+              <h5 class="card-title" style="color: #120ab3">
+                Recevez-le <strong>jeudi 6 octobre</strong> Livraison GRATUITE
+              </h5>
+            </div>
+          </div>
+
+          <div class="card h-100">
+            <a href="#"
+              ><img
+                class="card-img-top"
+                src="https://m.media-amazon.com/images/I/71ZX-nnMVeL._AC_UL480_QL65_.jpg"
+                alt="Card image cap"
+            /></a>
+            <div class="card-body">
+              <a href="#"
+                ><h4 class="card-title">
+                  HP Laptop 15s-fq0001sf PC Portable 15.6" FHD (Intel Celeron,
+                  RAM 4 Go, SSD 128 Go, AZERTY, Windows 11 Famille en Mode S)
+                  ...
+                </h4></a
+              >
+              <a href="#" class="card-text"><h1>349,00€</h1></a>
+              <h5 class="card-title" style="color: #120ab3">
+                Recevez-le <strong>jeudi 6 octobre</strong> Livraison GRATUITE
+              </h5>
+            </div>
+          </div>
+
+          <div class="card h-100">
+            <a href="#"
+              ><img
+                class="card-img-top"
+                src="https://m.media-amazon.com/images/I/81Y0-3qm+uL._AC_UL480_QL65_.jpg"
+                alt="Card image cap"
+            /></a>
+            <div class="card-body">
+              <a href="#"
+                ><h4 class="card-title">
+                  HP 15-dw3267ng 15.6" 1920 x 1080 Pixels Intel Core i7-11xxx 16
+                  GB 512 GB SSD NVIDIA GeForce MX450 Windows 10 Home...
+                </h4></a
+              >
+              <a href="#" class="card-text"><h1>966,83€</h1></a>
+              <h5 class="card-title" style="color: #120ab3">
+                Recevez-le <strong>jeudi 6 octobre</strong> Livraison GRATUITE
+              </h5>
+            </div>
+          </div>
+
+          <div class="card h-100">
+            <a href="#"
+              ><img
+                class="card-img-top"
+                src="https://m.media-amazon.com/images/I/71ZX-nnMVeL._AC_UL480_QL65_.jpg"
+                alt="Card image cap"
+            /></a>
+            <div class="card-body">
+              <a href="#"
+                ><h4 class="card-title">
+                  HP Laptop 15s-fq0001sf PC Portable 15.6" FHD (Intel Celeron,
+                  RAM 4 Go, SSD 128 Go, AZERTY, Windows 11 Famille en Mode S)
+                  ...
+                </h4></a
+              >
+              <a href="#" class="card-text"><h1>349,00€</h1></a>
+              <h5 class="card-title" style="color: #120ab3">
+                Recevez-le <strong>jeudi 6 octobre</strong> Livraison GRATUITE
+              </h5>
+            </div>
+          </div>
+
+          <div class="card h-100">
+            <a href="#"
+              ><img
+                class="card-img-top"
+                src="https://m.media-amazon.com/images/I/81Y0-3qm+uL._AC_UL480_QL65_.jpg"
+                alt="Card image cap"
+            /></a>
+            <div class="card-body">
+              <a href="#"
+                ><h4 class="card-title">
+                  HP 15-dw3267ng 15.6" 1920 x 1080 Pixels Intel Core i7-11xxx 16
+                  GB 512 GB SSD NVIDIA GeForce MX450 Windows 10 Home...
+                </h4></a
+              >
+              <a href="#" class="card-text"><h1>966,83€</h1></a>
+              <h5 class="card-title" style="color: #120ab3">
+                Recevez-le <strong>jeudi 6 octobre</strong> Livraison GRATUITE
+              </h5>
+            </div>
+          </div>
+
+          <div class="card h-100">
+            <a href="#"
+              ><img
+                class="card-img-top"
+                src="https://m.media-amazon.com/images/I/71ZX-nnMVeL._AC_UL480_QL65_.jpg"
+                alt="Card image cap"
+            /></a>
+            <div class="card-body">
+              <a href="#"
+                ><h4 class="card-title">
+                  HP Laptop 15s-fq0001sf PC Portable 15.6" FHD (Intel Celeron,
+                  RAM 4 Go, SSD 128 Go, AZERTY, Windows 11 Famille en Mode S)
+                  ...
+                </h4></a
+              >
+              <a href="#" class="card-text"><h1>349,00€</h1></a>
+              <h5 class="card-title" style="color: #120ab3">
+                Recevez-le <strong>jeudi 6 octobre</strong> Livraison GRATUITE
+              </h5>
+            </div>
+          </div>
+
+          <div class="card h-100">
+            <a href="#"
+              ><img
+                class="card-img-top"
+                src="https://m.media-amazon.com/images/I/81Y0-3qm+uL._AC_UL480_QL65_.jpg"
+                alt="Card image cap"
+            /></a>
+            <div class="card-body">
+              <a href="#"
+                ><h4 class="card-title">
+                  HP 15-dw3267ng 15.6" 1920 x 1080 Pixels Intel Core i7-11xxx 16
+                  GB 512 GB SSD NVIDIA GeForce MX450 Windows 10 Home...
+                </h4></a
+              >
+              <a href="#" class="card-text"><h1>966,83€</h1></a>
+              <h5 class="card-title" style="color: #120ab3">
+                Recevez-le <strong>jeudi 6 octobre</strong> Livraison GRATUITE
+              </h5>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>

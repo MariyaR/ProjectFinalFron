@@ -11,6 +11,7 @@ import { RegisterComponent } from './register/register.component';
 import { EditProfileComponent } from './edit-profile/edit-profile.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
+import { UserBarVerticalComponent } from './user-bar-vertical/user-bar-vertical.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { FooterComponent } from './footer/footer.component';
     RegisterComponent,
     EditProfileComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    UserBarVerticalComponent
   ],
   imports: [
     BrowserModule,
