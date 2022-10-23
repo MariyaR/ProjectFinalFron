@@ -9,7 +9,13 @@ export class AboutComponent implements OnInit {
 
   constructor() { }
 
+  products:Array<any>=new Array<any>();
+
   ngOnInit(): void {
+  }
+
+  addToCart(){
+
   }
 
 }
