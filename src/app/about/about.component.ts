@@ -19,8 +19,12 @@ export class AboutComponent implements OnInit {
   ngOnInit(): void {
 
     this.srv.getInfo();
-    this.produits = JSON.parse(sessionStorage.getItem("lst"))
+    //this.produits = JSON.parse(sessionStorage.getItem("lst"));
+    this.srv.getlist().then(x=>this.produits= x);
     console.log(this.produits)
+
+
+    //this.srv.getlist().then(x=>this.produits= x);
 
     /*let pr2 = new Produit;
     pr2.reference = "1000";

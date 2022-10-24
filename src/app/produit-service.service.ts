@@ -29,4 +29,15 @@ export class ProduitServiceService {
     );
 
   }
+
+
+getlist()
+{
+ return this.http.get("http://localhost:8080/produits").toPromise().then(res => {
+    this.produits =res;
+   return this.produits;
+    // code here is executed on success
+  })
+ .catch();
+}
 }
