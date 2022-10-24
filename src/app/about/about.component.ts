@@ -17,14 +17,26 @@ export class AboutComponent implements OnInit {
   constructor(private srv: ProduitServiceService) { }
 
   ngOnInit(): void {
+    
+    let pr2 = new Produit;
+    pr2.reference = 1000;
+    pr2.prix = 20.50;
+    pr2.description = "test produit";
+    pr2.images = ["gulf super tee.png"];
+    pr2.marque = "marque";
+    this.produits.push(pr2);
+    
+    
     this.srv.getlist().then(x=>this.MyList = x);
     let pr = new Produit;
     pr.reference = 1000;
-    pr.prix = 20;
+    pr.prix = 35.50;
     pr.description = "test produit";
     pr.images = ["Jack-BensonCherry2.png"];
     pr.marque = "marque";
     this.produits.push(pr);
+
+
 
   }
 

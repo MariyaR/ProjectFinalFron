@@ -186,14 +186,14 @@
             <a href="#">
                 <img
                 class="card-img-top"         
-                [src]="'../../assets/img/imgProducts/Pantalon/' + pr.images[0]" style = "height:450px;"/></a>
+                [src]="'../../assets/img/imgProducts/' + pr.images[0]" /></a>
             <div class="card-body">
               <a href="#"
                 ><h4 class="card-title">
                   {{pr.description}}
                 </h4></a
               >
-              <a class="card-text"><h1>{{pr.prix}}€</h1></a>
+              <a class="card-text"><h1>{{pr.prix | number: '.2' }}€</h1></a>
               
               <div class = "d-flex flex-row bd-highlight mb-3">
               <div class="p-1 bg-secondary w-25">
