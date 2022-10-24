@@ -1,10 +1,14 @@
+import { Image } from "./image";
+import { Taille } from "./taille";
+
 export class Produit {
   
+  id:number;
   reference: string;
   prix: number;
-  description: string;
-  descriptionLong: string;
+  descriptionCourte: string;
+  descriptionLongue: string;
   marque: string;
-  tailles: Array<any>=new Array();
-  images: Array<any>=new Array();
+  tailles: Array<Taille>=new Array();
+  images: Array<Image>=new Array();
 }

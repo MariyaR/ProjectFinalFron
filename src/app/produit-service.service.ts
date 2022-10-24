@@ -11,13 +11,22 @@ export class ProduitServiceService {
   constructor(private http : HttpClient ) { 
   }
 
-  getlist()
+  getInfo()
   {
-   return this.http.get("http://localhost:8081/produit").toPromise().then(res => {
-      this.produits =res;
-     return this.produits;
-      // code here is executed on success
-    })
-   .catch();
+    this.http.get("http://localhost:8080/produits").subscribe(
+      response => {
+      
+       
+        sessionStorage.setItem("lst",JSON.stringify(response));
+      }
+      ,
+      err => {
+        console.log("*************KO")
+        
+      }
+
+
+    );
+
   }
 }

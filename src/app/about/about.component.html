@@ -214,21 +214,35 @@
           
          
           <div class="card h-100" *ngFor="let pr of produits">
-            <a href="#">
+            <a >
                 <img
                 class="card-img-top"         
-                [src]="'../../assets/img/imgProducts/' + pr.images[0]" /></a>
+                [src]="'../../assets/img/imgProducts/' + pr.images[0].nom" /></a>
             <div class="card-body">
-              <a href="#"
-                ><h4 class="card-title">
-                  {{pr.description}}
-                </h4></a
-              >
+              
+              <a>
+                
+                <h4 class="card-title">
+                  {{pr.reference}}
+                </h4>
+                {{pr.descriptionCourte}}
+              
+              </a>
               <a class="card-text"><h1>{{pr.prix | number: '.2' }}€</h1></a>
               
-              <div class="p-1 bg-secondary ">
-                <input type="text" class="form-control form-control-alternative" placeholder="1" >
-              </div>
+              
+
+              <form >
+                
+                <select name="cars" id="cars" >
+                  
+                    <option [value]="taille" *ngFor = "let taille of pr.tailles">{{taille.taille}}</option>
+          
+                </select>
+                
+              </form>   
+
+
               <div class = "d-flex flex-row bd-highlight mb-3">
               <div class="p-1 bg-secondary w-25">
                 <input type="number" class="form-control form-control-alternative" placeholder="1" >
@@ -246,245 +260,16 @@
           <!-- </div> -->
 
           <!-- <div class="col-sm-3"> -->
-          <div class="card h-100">
-            <a href="#"
-              ><img
-                class="card-img-top"
-                src="https://m.media-amazon.com/images/I/71ZX-nnMVeL._AC_UL480_QL65_.jpg"
-                alt="Card image cap"
-            /></a>
-            <div class="card-body">
-              <a href="#"
-                ><h4 class="card-title">
-                  HP Laptop 15s-fq0001sf PC Portable 15.6" FHD (Intel Celeron,
-                  RAM 4 Go, SSD 128 Go, AZERTY, Windows 11 Famille en Mode S)
-                  ...
-                </h4></a
-              >
-              <a href="#" class="card-text"><h1>349,00€</h1></a>
-              <h5 class="card-title" style="color: #120ab3">
-                Recevez-le <strong>jeudi 6 octobre</strong> Livraison GRATUITE
-              </h5>
-            </div>
-          </div>
+         
           <!-- </div> -->
 
           <!-- <div class="col-sm-3"> -->
-          <div class="card h-100">
-            <a href="#"
-              ><img
-                class="card-img-top"
-                src="https://m.media-amazon.com/images/I/81Y0-3qm+uL._AC_UL480_QL65_.jpg"
-                alt="Card image cap"
-            /></a>
-            <div class="card-body">
-              <a href="#"
-                ><h4 class="card-title">
-                  HP 15-dw3267ng 15.6" 1920 x 1080 Pixels Intel Core i7-11xxx 16
-                  GB 512 GB SSD NVIDIA GeForce MX450 Windows 10 Home...
-                </h4></a
-              >
-              <a href="#" class="card-text"><h1>966,83€</h1></a>
-              <h5 class="card-title" style="color: #120ab3">
-                Recevez-le <strong>jeudi 6 octobre</strong> Livraison GRATUITE
-              </h5>
-            </div>
-          </div>
-
-          <div class="card h-100">
-            <a href="#"
-              ><img
-                class="card-img-top"
-                src="https://m.media-amazon.com/images/I/81Y0-3qm+uL._AC_UL480_QL65_.jpg"
-                alt="Card image cap"
-            /></a>
-            <div class="card-body">
-              <a href="#"
-                ><h4 class="card-title">
-                  HP 15-dw3267ng 15.6" 1920 x 1080 Pixels Intel Core i7-11xxx 16
-                  GB 512 GB SSD NVIDIA GeForce MX450 Windows 10 Home...
-                </h4></a
-              >
-              <a href="#" class="card-text"><h1>966,83€</h1></a>
-              <h5 class="card-title" style="color: #120ab3">
-                Recevez-le <strong>jeudi 6 octobre</strong> Livraison GRATUITE
-              </h5>
-            </div>
-          </div>
-
-          <div class="card h-100">
-            <a href="#"
-              ><img
-                class="card-img-top"
-                src="https://m.media-amazon.com/images/I/61hofxR1GQL._AC_UL480_QL65_.jpg"
-                alt="Card image cap"
-            /></a>
-            <div class="card-body">
-              <a href="#"
-                ><h4 class="card-title">
-                  Razer Blade 15 Advanced Model - PC Portable Gaming 15.6, UHD
-                  144Hz - i9 - NVIDIA GeForce RTX 3080 Ti, 32GB DDR5...
-                </h4></a
-              >
-              <a href="#" class="card-text"><h1>4 799,99€</h1></a>
-              <h5 class="card-title" style="color: #120ab3">
-                Recevez-le <strong>jeudi 6 octobre</strong> Livraison GRATUITE
-              </h5>
-            </div>
-          </div>
-
-          <div class="card h-100">
-            <a href="#"
-              ><img
-                class="card-img-top"
-                src="https://m.media-amazon.com/images/I/71EbDZ6ymQL._AC_UL480_QL65_.jpg"
-                alt="Card image cap"
-            /></a>
-            <div class="card-body">
-              <a href="#"
-                ><h4 class="card-title">
-                  Ordinateur PC Portable Thomson Neo 14,1 Pouces, Celeron N3350,
-                  4Gb RAM, 64Gb Stockage SSD, Windows 10, AZERTY ...
-                </h4></a
-              >
-              <a href="#" class="card-text"><h1>189,99€</h1></a>
-              <h5 class="card-title" style="color: #120ab3">
-                Recevez-le <strong>jeudi 6 octobre</strong> Livraison GRATUITE
-              </h5>
-            </div>
-          </div>
-
-          <div class="card h-100">
-            <a href="#"
-              ><img
-                class="card-img-top"
-                src="https://m.media-amazon.com/images/I/71ZX-nnMVeL._AC_UL480_QL65_.jpg"
-                alt="Card image cap"
-            /></a>
-            <div class="card-body">
-              <a href="#"
-                ><h4 class="card-title">
-                  HP Laptop 15s-fq0001sf PC Portable 15.6" FHD (Intel Celeron,
-                  RAM 4 Go, SSD 128 Go, AZERTY, Windows 11 Famille en Mode S)
-                  ...
-                </h4></a
-              >
-              <a href="#" class="card-text"><h1>349,00€</h1></a>
-              <h5 class="card-title" style="color: #120ab3">
-                Recevez-le <strong>jeudi 6 octobre</strong> Livraison GRATUITE
-              </h5>
-            </div>
-          </div>
-
-          <div class="card h-100">
-            <a href="#"
-              ><img
-                class="card-img-top"
-                src="https://m.media-amazon.com/images/I/81Y0-3qm+uL._AC_UL480_QL65_.jpg"
-                alt="Card image cap"
-            /></a>
-            <div class="card-body">
-              <a href="#"
-                ><h4 class="card-title">
-                  HP 15-dw3267ng 15.6" 1920 x 1080 Pixels Intel Core i7-11xxx 16
-                  GB 512 GB SSD NVIDIA GeForce MX450 Windows 10 Home...
-                </h4></a
-              >
-              <a href="#" class="card-text"><h1>966,83€</h1></a>
-              <h5 class="card-title" style="color: #120ab3">
-                Recevez-le <strong>jeudi 6 octobre</strong> Livraison GRATUITE
-              </h5>
-            </div>
-          </div>
-
-          <div class="card h-100">
-            <a href="#"
-              ><img
-                class="card-img-top"
-                src="https://m.media-amazon.com/images/I/71ZX-nnMVeL._AC_UL480_QL65_.jpg"
-                alt="Card image cap"
-            /></a>
-            <div class="card-body">
-              <a href="#"
-                ><h4 class="card-title">
-                  HP Laptop 15s-fq0001sf PC Portable 15.6" FHD (Intel Celeron,
-                  RAM 4 Go, SSD 128 Go, AZERTY, Windows 11 Famille en Mode S)
-                  ...
-                </h4></a
-              >
-              <a href="#" class="card-text"><h1>349,00€</h1></a>
-              <h5 class="card-title" style="color: #120ab3">
-                Recevez-le <strong>jeudi 6 octobre</strong> Livraison GRATUITE
-              </h5>
-            </div>
-          </div>
-
-          <div class="card h-100">
-            <a href="#"
-              ><img
-                class="card-img-top"
-                src="https://m.media-amazon.com/images/I/81Y0-3qm+uL._AC_UL480_QL65_.jpg"
-                alt="Card image cap"
-            /></a>
-            <div class="card-body">
-              <a href="#"
-                ><h4 class="card-title">
-                  HP 15-dw3267ng 15.6" 1920 x 1080 Pixels Intel Core i7-11xxx 16
-                  GB 512 GB SSD NVIDIA GeForce MX450 Windows 10 Home...
-                </h4></a
-              >
-              <a href="#" class="card-text"><h1>966,83€</h1></a>
-              <h5 class="card-title" style="color: #120ab3">
-                Recevez-le <strong>jeudi 6 octobre</strong> Livraison GRATUITE
-              </h5>
-            </div>
-          </div>
-
-          <div class="card h-100">
-            <a href="#"
-              ><img
-                class="card-img-top"
-                src="https://m.media-amazon.com/images/I/71ZX-nnMVeL._AC_UL480_QL65_.jpg"
-                alt="Card image cap"
-            /></a>
-            <div class="card-body">
-              <a href="#"
-                ><h4 class="card-title">
-                  HP Laptop 15s-fq0001sf PC Portable 15.6" FHD (Intel Celeron,
-                  RAM 4 Go, SSD 128 Go, AZERTY, Windows 11 Famille en Mode S)
-                  ...
-                </h4></a
-              >
-              <a href="#" class="card-text"><h1>349,00€</h1></a>
-              <h5 class="card-title" style="color: #120ab3">
-                Recevez-le <strong>jeudi 6 octobre</strong> Livraison GRATUITE
-              </h5>
-            </div>
-          </div>
-
-          <div class="card h-100">
-            <a href="#"
-              ><img
-                class="card-img-top"
-                src="https://m.media-amazon.com/images/I/81Y0-3qm+uL._AC_UL480_QL65_.jpg"
-                alt="Card image cap"
-            /></a>
-            <div class="card-body">
-              <a href="#"
-                ><h4 class="card-title">
-                  HP 15-dw3267ng 15.6" 1920 x 1080 Pixels Intel Core i7-11xxx 16
-                  GB 512 GB SSD NVIDIA GeForce MX450 Windows 10 Home...
-                </h4></a
-              >
-              <a href="#" class="card-text"><h1>966,83€</h1></a>
-              <h5 class="card-title" style="color: #120ab3">
-                Recevez-le <strong>jeudi 6 octobre</strong> Livraison GRATUITE
-              </h5>
-            </div>
+          
+            
           </div>
         </div>
       </div>
-    </div>
+   
   
   </body>
 </html>
