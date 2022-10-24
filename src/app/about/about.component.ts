@@ -19,7 +19,7 @@ export class AboutComponent implements OnInit {
   ngOnInit(): void {
     
     let pr2 = new Produit;
-    pr2.reference = 1000;
+    pr2.reference = "1000";
     pr2.prix = 20.50;
     pr2.description = "test produit";
     pr2.images = ["gulf super tee.png"];
@@ -29,7 +29,7 @@ export class AboutComponent implements OnInit {
     
     this.srv.getlist().then(x=>this.MyList = x);
     let pr = new Produit;
-    pr.reference = 1000;
+    pr.reference = "1000";
     pr.prix = 35.50;
     pr.description = "test produit";
     pr.images = ["Jack-BensonCherry2.png"];

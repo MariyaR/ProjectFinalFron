@@ -1,6 +1,6 @@
 export class Produit {
   
-  reference: number;
+  reference: string;
   prix: number;
   description: string;
   descriptionLong: string;
