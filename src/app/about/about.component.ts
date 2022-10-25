@@ -49,6 +49,8 @@ export class AboutComponent implements OnInit {
     ligne.setPrix();
     this.srvPan.addLigne(ligne);
     console.log(sessionStorage.getItem("panier"))
+
+    this.srvPan.sendCommande(); // a supprimer apres integration avec back
   }
 
 }

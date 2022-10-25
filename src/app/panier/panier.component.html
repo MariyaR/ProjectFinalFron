@@ -71,7 +71,7 @@
               <div class="card-header border-0">
                 <h3 class="mb-0">Total : 100500 including TVA</h3>
               </div>
-      <div class="table-responsive">
+      <div class="table-responsive" *ngFor="let pr of panier.lignes; index as i">
         <div>
             <table class="table align-items-center  ">
                 <thead class="thead-light">

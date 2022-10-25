@@ -3,6 +3,6 @@ import { ProduitTo } from "./produit-to";
 
 export class ProduitsTo {
     Produits : Array<ProduitTo> = new Array();
-    Client: ClientTo;
+    Client: ClientTo = new ClientTo;
     Total:number;
 }

@@ -1,5 +1,5 @@
 export class ProduitTo {
-    reference: string;
+    id: string;
     taille:string;
     quantite: number
 }

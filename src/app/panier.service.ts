@@ -13,6 +13,7 @@ export class PanierService {
 
   panier: Facture = new Facture(); //panier pour interagir avec le client
   produits : ProduitsTo = new ProduitsTo; //panier a anvoyer a back
+  message;
 
   constructor(private http:HttpClient) { }
 
@@ -27,16 +28,29 @@ export class PanierService {
   }
 
   sendCommande(){
-    this.produits.Client.mail = this.client;
+    this.produits.Client.id = this.client;
     this.panier.lignes.forEach(element => {
       let produitTo = new ProduitTo();
-      produitTo.reference = element.art.reference;
+      produitTo.id = element.art.reference;
       produitTo.quantite = element.nb;
       produitTo.taille = element.taille;
       this.produits.Produits.push(produitTo);
     });
     this.produits.Total = this.getTotal();
-    console.log(this.produits);
+    console.log("I am panierSerive, ready to send to back this:")
+    console.log(this.produits)
+    console.log(JSON.stringify(this.produits));
+    /*this.http.post("http://localhost:8080/commandes", this.produits).toPromise().then(res => {
+      this.message =res;
+      //redirect to thank you page
+     return this.message;
+      // code here is executed on success
+      //redirect to the panier
+    })
+   .catch();
+   console.log("response from server");
+   console.log(this.message);
+*/
   }
     
 }

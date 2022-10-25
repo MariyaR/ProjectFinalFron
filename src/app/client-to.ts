@@ -1,4 +1,4 @@
 export class ClientTo {
-    mail:string;
+    id:string;
     
 }
