@@ -11,8 +11,8 @@ import { ProduitsTo } from './produits-to';
 export class PanierService {
   client: string = "client";
 
-  panier: Facture;
-  produits : ProduitsTo = new ProduitsTo;
+  panier: Facture; //panier pour interagir avec le client
+  produits : ProduitsTo = new ProduitsTo; //panier a anvoyer a back
 
   constructor(private http:HttpClient) { }
 

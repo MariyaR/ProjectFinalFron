@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Facture } from '../facture';
+import { PanierService } from '../panier.service';
 import { Produit } from '../produit';
 import { ProduitServiceService } from '../produit-service.service';
 
@@ -11,45 +13,33 @@ export class AboutComponent implements OnInit {
 
   
   produits:Array<any>=new Array<any>();
-
+  panier : Facture;
+  tailles = [];
   
   MyList: any;
-  constructor(private srv: ProduitServiceService) { }
+  constructor(private srvPr: ProduitServiceService, private srvPan : PanierService) { }
 
   ngOnInit(): void {
+    this.panier = new Facture; //a supprimer
+    sessionStorage.setItem("panier",JSON.stringify(this.panier)); // a bougher a component login ou logged user
 
-    this.srv.getInfo();
+    //this.srvPr.getInfo();
     //this.produits = JSON.parse(sessionStorage.getItem("lst"));
-    this.srv.getlist().then(x=>this.produits= x);
-    console.log(this.produits)
+    this.srvPr.getlist().then(x=>this.produits= x);
+    console.log(this.produits);
+    this.panier = JSON.parse(sessionStorage.getItem("panier"));
+    
 
 
     //this.srv.getlist().then(x=>this.produits= x);
 
-    /*let pr2 = new Produit;
-    pr2.reference = "1000";
-    pr2.prix = 20.50;
-    pr2.description = "test produit";
-    pr2.images = ["gulf super tee.png"];
-    pr2.marque = "marque";
-    this.produits.push(pr2);
-    
-    
-    
-    let pr = new Produit;
-    pr.reference = "1000";
-    pr.prix = 35.50;
-    pr.description = "test produit";
-    pr.images = ["Jack-BensonCherry2.png"];
-    pr.marque = "marque";
-    this.produits.push(pr);
-
-*/
-
   }
 
-  addToCart(){
-
+  addToCart(pr: Produit, i : number, nb: any, taille : any){
+    console.log(pr);
+    console.log(i);
+    console.log(nb);
+    console.log(taille);
   }
 
 }
