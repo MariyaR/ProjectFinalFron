@@ -9,7 +9,7 @@ import { ProduitsTo } from './produits-to';
   providedIn: 'root'
 })
 export class PanierService {
-  client: string = "client";
+  client: string = "1";
 
   panier: Facture = new Facture(); //panier pour interagir avec le client
   produits : ProduitsTo = new ProduitsTo; //panier a anvoyer a back
@@ -28,19 +28,19 @@ export class PanierService {
   }
 
   sendCommande(){
-    this.produits.Client.id = this.client;
+    this.produits.client.id = this.client;
     this.panier.lignes.forEach(element => {
       let produitTo = new ProduitTo();
-      produitTo.id = element.art.reference;
+      produitTo.produit = element.art;
       produitTo.quantite = element.nb;
-      produitTo.taille = element.taille;
-      this.produits.Produits.push(produitTo);
+      produitTo.taille = "L";
+      this.produits.produits.push(produitTo);
     });
-    this.produits.Total = this.getTotal();
+    this.produits.total = this.getTotal();
     console.log("I am panierSerive, ready to send to back this:")
     console.log(this.produits)
     console.log(JSON.stringify(this.produits));
-    /*this.http.post("http://localhost:8080/commandes", this.produits).toPromise().then(res => {
+    this.http.post("http://localhost:8080/commandes", this.produits).toPromise().then(res => {
       this.message =res;
       //redirect to thank you page
      return this.message;
@@ -50,7 +50,6 @@ export class PanierService {
    .catch();
    console.log("response from server");
    console.log(this.message);
-*/
   }
     
 }

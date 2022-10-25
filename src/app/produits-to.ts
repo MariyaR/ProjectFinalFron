@@ -2,7 +2,7 @@ import { ClientTo } from "./client-to";
 import { ProduitTo } from "./produit-to";
 
 export class ProduitsTo {
-    Produits : Array<ProduitTo> = new Array();
-    Client: ClientTo = new ClientTo;
-    Total:number;
+    produits : Array<ProduitTo> = new Array();
+    client: ClientTo = new ClientTo;
+    total:number;
 }

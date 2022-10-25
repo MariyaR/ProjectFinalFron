@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Facture } from '../facture';
+import { PanierService } from '../panier.service';
 
 @Component({
   selector: 'app-panier',
@@ -12,7 +13,7 @@ export class PanierComponent implements OnInit {
   panier : Facture;
   total: number;
 
-  constructor() { }
+  constructor(private srvPan: PanierService) { }
 
   ngOnInit(): void {
     this.panier = JSON.parse(sessionStorage.getItem("panier"));
@@ -37,15 +38,14 @@ export class PanierComponent implements OnInit {
 
   delete(i: number){
     let delPr = this.panier.lignes[i].prix;
-   
     this.panier.lignes.splice(i);
     this.panier.total-=delPr;
     this.total = this.panier.total;
   }
 
-  valider(){
+  validate(){
     //envoyer la request de validation
-    
+    this.srvPan.sendCommande();
   }
 
 }

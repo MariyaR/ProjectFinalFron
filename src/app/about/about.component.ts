@@ -51,7 +51,7 @@ export class AboutComponent implements OnInit {
     this.panier.total+=ligne.prix;
     console.log(sessionStorage.getItem("panier"))
 
-    this.srvPan.sendCommande(); // a supprimer apres integration avec back
+    //this.srvPan.sendCommande(); // a supprimer apres integration avec back
   }
 
 }
