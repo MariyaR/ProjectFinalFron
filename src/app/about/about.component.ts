@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Facture } from '../facture';
+import { Ligne } from '../ligne';
 import { PanierService } from '../panier.service';
 import { Produit } from '../produit';
 import { ProduitServiceService } from '../produit-service.service';
@@ -14,7 +15,8 @@ export class AboutComponent implements OnInit {
   
   produits:Array<any>=new Array<any>();
   panier : Facture;
-  tailles = [];
+  tailles : Array<any>=new Array<any>();
+  x:string;
   
   MyList: any;
   constructor(private srvPr: ProduitServiceService, private srvPan : PanierService) { }
@@ -35,11 +37,18 @@ export class AboutComponent implements OnInit {
 
   }
 
-  addToCart(pr: Produit, i : number, nb: any, taille : any){
+  addToCart(pr: Produit, i : number, nb: any, taille : string){
     console.log(pr);
     console.log(i);
     console.log(nb);
-    console.log(taille);
+    console.log(JSON.stringify(this.x));
+
+    let ligne = new Ligne();
+    ligne.art = pr;
+    ligne.nb = nb;
+    ligne.setPrix();
+    this.srvPan.addLigne(ligne);
+    console.log(sessionStorage.getItem("panier"))
   }
 
 }

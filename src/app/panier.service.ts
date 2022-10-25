@@ -11,7 +11,7 @@ import { ProduitsTo } from './produits-to';
 export class PanierService {
   client: string = "client";
 
-  panier: Facture; //panier pour interagir avec le client
+  panier: Facture = new Facture(); //panier pour interagir avec le client
   produits : ProduitsTo = new ProduitsTo; //panier a anvoyer a back
 
   constructor(private http:HttpClient) { }
@@ -19,6 +19,7 @@ export class PanierService {
   addLigne(ligne: Ligne) {
     this.panier.lignes.push(ligne);
     this.panier.total+=ligne.prix;
+    sessionStorage.setItem("panier", JSON.stringify(this.panier));
   }
 
   getTotal() : number{

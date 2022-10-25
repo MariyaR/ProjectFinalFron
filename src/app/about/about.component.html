@@ -231,7 +231,7 @@
               <a class="card-text"><h1>{{pr.prix | number: '.2' }}€</h1></a>
               
               <div class="d-flex flex-row bd-highlight mb-2">
-                <select name="tailles" id="tailles" class="form-select form-control">
+                <select name="tailles" id="tailles" class="form-select form-control" [(ngModel)] = "x">
                     <option [value]="taille" *ngFor = "let taille of pr.tailles">{{taille.taille}}</option>
                 </select>
               </div>
@@ -240,7 +240,7 @@
               <div class="p-1 bg-secondary w-25">
                 <input type="number" class="form-control form-control-alternative" placeholder="0" #nb>
               </div>
-              <button class="btn btn-icon btn-3 btn-warning w-75 btn-sm " type="button" (click)="addToCart(pr,i, nb.value,i)">
+              <button class="btn btn-icon btn-3 btn-warning w-75 btn-sm " type="button" (click)="addToCart(pr,i, nb.value, x)">
                 <span class="btn-inner--icon"><i class="ni ni-cart"></i></span>
               <span class="btn-inner--text">ajouter a panier</span>
               </button>
