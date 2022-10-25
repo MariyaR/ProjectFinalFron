@@ -14,6 +14,7 @@ import { FooterComponent } from './footer/footer.component';
 import { UserBarVerticalComponent } from './user-bar-vertical/user-bar-vertical.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
+import { MerciPageComponent } from './merci-page/merci-page.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import {HttpClientModule} from '@angular/common/http';
     EditProfileComponent,
     HeaderComponent,
     FooterComponent,
-    UserBarVerticalComponent
+    UserBarVerticalComponent,
+    MerciPageComponent
   ],
   imports: [
     BrowserModule,
