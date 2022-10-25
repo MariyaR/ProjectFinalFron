@@ -69,7 +69,10 @@
             <div class="card">
               <!-- Card header -->
               <div class="card-header border-0">
+                <div class="d-flex justify-content-between">
                 <h3 class="mb-0">Total : {{total | number: '.2'}}€ </h3>
+                <button class="btn btn-default" (click)="validate()">valider votre panier</button>
+                </div>
               </div>
       <div class="table-responsive" >
         <div>
@@ -97,7 +100,7 @@
                                     <img  [src]="'../../assets/img/imgProducts/' + ligne.art.images[0].nom" style="height : 100px;"  src="">
                                 </a>
                                 <div class="media-body">
-                                    <span class="name mb-0 text-sm">{{ligne.art.reference}}</span>
+                                    <span class="name mb-0 text-sm">{{ligne.art.reference}} taille: XL</span>
                                 </div>
                             </div>
                         </th>
@@ -131,7 +134,6 @@
         </div>
     </div>
 
-    <button (click)="validate()">validate</button>
   
 </body>
 
