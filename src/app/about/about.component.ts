@@ -48,6 +48,7 @@ export class AboutComponent implements OnInit {
     ligne.nb = nb;
     ligne.setPrix();
     this.srvPan.addLigne(ligne);
+    this.panier.total+=ligne.prix;
     console.log(sessionStorage.getItem("panier"))
 
     this.srvPan.sendCommande(); // a supprimer apres integration avec back

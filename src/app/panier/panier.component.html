@@ -69,41 +69,43 @@
             <div class="card">
               <!-- Card header -->
               <div class="card-header border-0">
-                <h3 class="mb-0">Total : 100500 including TVA</h3>
+                <h3 class="mb-0">Total : {{total | number: '.2'}}€ </h3>
               </div>
-      <div class="table-responsive" *ngFor="let pr of panier.lignes; index as i">
+      <div class="table-responsive" >
         <div>
-            <table class="table align-items-center  ">
+            <table class="table align-items-center ">
                 <thead class="thead-light">
                     <tr>
+                        <th scope="col" class="sort" data-sort="name">Item</th>
                         <th scope="col" class="sort" data-sort="name">Article</th>
-                        <th scope="col" class="sort" data-sort="budget">Prix</th>
-                        <th scope="col" class="sort" data-sort="status">Quantite</th>
+                        <th scope="col" class="sort" data-sort="budget">Quantite</th>
+                        <th scope="col" class="sort" data-sort="status">Prix total</th>
                         
                       
                         <th scope="col"></th>
                     </tr>
                 </thead>
                 <tbody class="list">
-                    <tr>
+                    <tr *ngFor="let ligne of panier.lignes; index as i">
+                        
+                        <td class="budget">
+                            {{i+1}}
+                          </td>
                         <th scope="row">
                             <div class="media align-items-center">
-                                <a href="#" class=" mr-3">
-                                    <img alt="Image placeholder" style="height : 100px;"  src="https://m.media-amazon.com/images/I/711MeO4o2zL._AC_UL480_QL65_.jpg">
+                                <a  class=" mr-3">
+                                    <img  [src]="'../../assets/img/imgProducts/' + ligne.art.images[0].nom" style="height : 100px;"  src="">
                                 </a>
                                 <div class="media-body">
-                                    <span class="name mb-0 text-sm">Item1</span>
+                                    <span class="name mb-0 text-sm">{{ligne.art.reference}}</span>
                                 </div>
                             </div>
                         </th>
                         <td class="budget">
-                            $2500 USD
+                          {{ligne.nb}}
                         </td>
-                        <td>
-                            <span class="badge badge-dot mr-4">
-                          <i class="bg-warning"></i>
-                          <span class="status">1</span>
-                            </span>
+                        <td class="budget">
+                            {{ligne.prix | number: '.2' }}€
                         </td>
                         <td class="text-right">
                             <div class="dropdown">
@@ -111,114 +113,13 @@
                                     <i class="fas fa-ellipsis-v"></i>
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
-                                    <a class="dropdown-item" href="#">ajouter</a>
-                                    <a class="dropdown-item" href="#">diminuer</a>
-                                    <a class="dropdown-item" href="#">supprimer</a>
+                                    <a class="dropdown-item" (click) = "plus(i)">ajouter</a>
+                                    <a class="dropdown-item" (click) = "minus(i)">diminuer</a>
+                                    <a class="dropdown-item" (click) = "delete(i)">supprimer</a>
                                 </div>
                             </div>
                         </td>
                     </tr>
-
-                    <tr>
-                      <th scope="row">
-                          <div class="media align-items-center">
-                              <a href="#" class=" mr-3">
-                                  <img alt="Image placeholder" style="height : 100px;"  src="https://m.media-amazon.com/images/I/711MeO4o2zL._AC_UL480_QL65_.jpg">
-                              </a>
-                              <div class="media-body">
-                                  <span class="name mb-0 text-sm">Item1</span>
-                              </div>
-                          </div>
-                      </th>
-                      <td class="budget">
-                          $2500 USD
-                      </td>
-                      <td>
-                          <span class="badge badge-dot mr-4">
-                        <i class="bg-warning"></i>
-                        <span class="status">1</span>
-                          </span>
-                      </td>
-                      <td class="text-right">
-                          <div class="dropdown">
-                              <a class="btn btn-sm btn-icon-only text-light" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                  <i class="fas fa-ellipsis-v"></i>
-                              </a>
-                              <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
-                                  <a class="dropdown-item" href="#">ajouter</a>
-                                  <a class="dropdown-item" href="#">diminuer</a>
-                                  <a class="dropdown-item" href="#">supprimer</a>
-                              </div>
-                          </div>
-                      </td>
-                  </tr>
-
-                  <tr>
-                    <th scope="row">
-                        <div class="media align-items-center">
-                            <a href="#" class=" mr-3">
-                                <img alt="Image placeholder" style="height : 100px;"  src="https://m.media-amazon.com/images/I/711MeO4o2zL._AC_UL480_QL65_.jpg">
-                            </a>
-                            <div class="media-body">
-                                <span class="name mb-0 text-sm">Item1</span>
-                            </div>
-                        </div>
-                    </th>
-                    <td class="budget">
-                        $2500 USD
-                    </td>
-                    <td>
-                        <span class="badge badge-dot mr-4">
-                      <i class="bg-warning"></i>
-                      <span class="status">1</span>
-                        </span>
-                    </td>
-                    <td class="text-right">
-                        <div class="dropdown">
-                            <a class="btn btn-sm btn-icon-only text-light" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <i class="fas fa-ellipsis-v"></i>
-                            </a>
-                            <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
-                                <a class="dropdown-item" href="#">ajouter</a>
-                                <a class="dropdown-item" href="#">diminuer</a>
-                                <a class="dropdown-item" href="#">supprimer</a>
-                            </div>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                  <th scope="row">
-                      <div class="media align-items-center">
-                          <a href="#" class=" mr-3">
-                              <img alt="Image placeholder" style="height : 100px;"  src="https://m.media-amazon.com/images/I/711MeO4o2zL._AC_UL480_QL65_.jpg">
-                          </a>
-                          <div class="media-body">
-                              <span class="name mb-0 text-sm">Item1</span>
-                          </div>
-                      </div>
-                  </th>
-                  <td class="budget">
-                      $2500 USD
-                  </td>
-                  <td>
-                      <span class="badge badge-dot mr-4">
-                    <i class="bg-warning"></i>
-                    <span class="status">1</span>
-                      </span>
-                  </td>
-                  <td class="text-right">
-                      <div class="dropdown">
-                          <a class="btn btn-sm btn-icon-only text-light" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                              <i class="fas fa-ellipsis-v"></i>
-                          </a>
-                          <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
-                              <a class="dropdown-item" href="#">ajouter</a>
-                              <a class="dropdown-item" href="#">diminuer</a>
-                              <a class="dropdown-item" href="#">supprimer</a>
-                          </div>
-                      </div>
-                  </td>
-              </tr>
                 </tbody>
                 
             </table>
