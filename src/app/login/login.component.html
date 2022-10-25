@@ -111,52 +111,20 @@
     <!-- Main content -->
     <div class="main-content">
       <!-- Header -->
-      <div class="header bg-gradient-primary py-7 py-lg-8 pt-lg-9">
-        <!-- <div class="container">
-          <div class="header-body text-center mb-7">
-            <div class="row justify-content-center">
-              <div class="col-xl-5 col-lg-6 col-md-8 px-5">
-                <h1 class="text-white">Welcome!</h1>
-                <p class="text-lead text-white">
-                  Use these awesome forms to login or create new account in your
-                  project for free.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div> -->
-        <!-- <div class="separator separator-bottom separator-skew zindex-100">
-           S
-        </div> -->
+      <div class="header bg-gradient-warning py-7 py-lg-8 pt-lg-9">
+
       </div>
       <!-- Page content -->
       <div class="container mt--9 pb-5 text-gray">
         <div class="row justify-content-center">
           <div class="col-lg-5 col-md-7">
             <div class="card bg-secondary border border-soft mb-0">
-              <!-- <div class="card-header bg-transparent pb-5">
-                <div class="text-center mt-2 mb-3">
-                  <small>Sign in with</small>
-                </div>
-                <div class="btn-wrapper text-center">
-                  <a href="#" class="btn btn-neutral btn-icon"
-                    ><span class="btn-inner--icon"
-                      ><img
-                        src="../../assets/img/icons/common/github.svg" /></span
-                    ><span class="btn-inner--text">Github</span> </a
-                  ><a href="#" class="btn btn-neutral btn-icon"
-                    ><span class="btn-inner--icon"
-                      ><img
-                        src="../../assets/img/icons/common/google.svg" /></span
-                    ><span class="btn-inner--text">Google</span></a
-                  >
-                </div>
-              </div> -->
+
               <div class="card-body px-lg-5 py-lg-5">
                 <div class="text-center mb-4 erreur" *ngIf="erreur">
                   {{message}}
                 </div>
-                <div class="text-center mb-4">
+                <div class="text-center mb-4" style="color:black ;">
                   <p>Veuillez entrer votre email et mot de passe :</p>
                 </div>
                 <form role="form">
@@ -176,20 +144,9 @@
                       <input class="form-control" placeholder="Password" type="password" [(ngModel)]="utilisateur.mdp" name="mdp"/>
                     </div>
                   </div>
-                  <!-- <div
-                    class="custom-control custom-control-alternative custom-checkbox"
-                  >
-                    <input
-                      class="custom-control-input"
-                      id=" customCheckLogin"
-                      type="checkbox"
-                    />
-                    <label class="custom-control-label" for=" customCheckLogin"
-                      ><span>Remember me</span></label
-                    >
-                  </div> -->
+
                   <div class="text-center">
-                    <button type="button" class="btn btn-primary my-4" (click)="connexion()">
+                    <button type="button" class="btn btn-warning my-4" (click)="connexion()">
                       Se connecter
                     </button>
                   </div>
@@ -202,8 +159,8 @@
                   ><small>Forgot password?</small></a
                 >
               </div> -->
-              <div class="col-6 text-right">
-                <a href="#" class="text-gray"><small>Créer un compte</small></a>
+              <div class=" text-center">
+                <a href="#" class="text-warning"><small>Créer un compte</small></a>
               </div>
             </div>
           </div>
