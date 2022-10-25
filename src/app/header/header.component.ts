@@ -13,12 +13,23 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  goToProfile() {
-    this.router.navigate(['userProfile']);
-  }
+  logged:boolean = true;
+  rechercher:string
 
-  goToCart() {
-    this.router.navigate(['panier']);
-  }
+deconnexion()
+{
+  this.logged = !this.logged
+  this.router.navigate(['about']);
+}
+
+filterBy(filtre:string)
+{
+  
+}
+
+search()
+{
+  console.log(this.rechercher)
+}
 
 }
