@@ -10,7 +10,7 @@ import { ProduitsTo } from './produits-to';
   providedIn: 'root'
 })
 export class PanierService {
-  client: string = "1";
+  client: string = "2";
 
   panier: Facture = new Facture(); //panier pour interagir avec le client
   produits : ProduitsTo = new ProduitsTo; //panier a anvoyer a back
@@ -31,7 +31,9 @@ export class PanierService {
   }
 
   sendCommande(){
-    this.produits.client.id = this.client;
+    //this.produits.client.id = this.client;
+    this.produits.client.id = JSON.parse(sessionStorage.getItem("client")).id;
+    console.log(this.produits.client.id);
     this.panier.lignes.forEach(element => {
       let produitTo = new ProduitTo();
       produitTo.produit = element.art;
