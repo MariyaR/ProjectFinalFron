@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Facture } from '../facture';
@@ -18,11 +19,25 @@ export class AboutComponent implements OnInit {
   panier : Facture;
   tailles : Array<any>=new Array<any>();
   x:string;
+  filtre:string;
+  categorie:Array<string>;
+  
+  message2=JSON.parse(sessionStorage.getItem("filtre"));
   
   MyList: any;
-  constructor(private srvPr: ProduitServiceService, private srvPan : PanierService, private router:Router) { }
+  constructor(private http:HttpClient, private srvPr: ProduitServiceService, private srvPan : PanierService, private router:Router) { }
 
   ngOnInit(): void {
+
+    this.http.get<Array<string>>("http://localhost:8080/produits/categories").subscribe(
+      (response) => {
+        this.categorie=response;
+      },
+     (err) => {  
+      },
+      () => {
+      }
+    );
 
     this.panier = JSON.parse(sessionStorage.getItem("panier"));
     if (this.panier === undefined) {
@@ -72,6 +87,11 @@ export class AboutComponent implements OnInit {
   {
     sessionStorage.setItem("produit",JSON.stringify(p));
     this.router.navigate(['ficheproduit']);
+  }
+
+  filterBy(filtre:string)
+  {
+    this.filtre = filtre;
   }
 
 }

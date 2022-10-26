@@ -35,8 +35,8 @@ export class LoginComponent implements OnInit {
       sessionStorage.setItem("client",JSON.stringify(response));
       this.logged=true;
       sessionStorage.setItem("logged",JSON.stringify(this.logged));
-      console.log(sessionStorage.getItem("logged"));
       this.router.navigate(['about']);
+      
     },
       err => {
         this.erreur = true

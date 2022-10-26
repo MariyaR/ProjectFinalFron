@@ -15,15 +15,7 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {
     this.logged=JSON.parse(sessionStorage.getItem("logged"));
 
-    this.http.get<Array<string>>("http://localhost:8080/produits/categories").subscribe(
-      (response) => {
-        this.categorie=response;
-      },
-     (err) => {  
-      },
-      () => {
-      }
-    );
+   
   }
 
   rechercher:string
@@ -41,9 +33,11 @@ connexion()
   this.router.navigate(['login']);
 }
 
+
 filterBy(filtre:string)
 {
-  
+  sessionStorage.setItem("filtre", JSON.stringify(filtre+"S"))
+  this.router.navigate(['about']);
 }
 
 search()

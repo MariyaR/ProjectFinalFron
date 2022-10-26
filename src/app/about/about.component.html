@@ -158,13 +158,26 @@
 
       </div>
 
-
-      <div class="container mt-7">
+      <!-- <br>
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item dropdown" data-toggle="dropdown"  aria-haspopup="true">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"  aria-expanded="false" style="width: 200px;">
+              Filtrer par catégorie
+            </a>
+            <ul class="dropdown-menu" >
+              <li><a class="dropdown-item" href="#" (click) = "filterBy('tout')">TOUT LES PRODUITS</a></li>
+              <li *ngFor="let c of categorie">
+                <a class="dropdown-item" href="#" (click) = "filterBy(c)">{{c}}</a>
+              </li>
+            </ul>
+          </li>
+        </ul> -->
+  
+      <div class="container mt-5">
         <div class="card-columns">
           <!-- <div class="row align-items-center justify-content-xl-between">
                 <div class="col-sm-3"> -->
           
-         
           <div class="card h-100" *ngFor="let pr of produits; index as i">
             <a href='ficheproduit' (click)="goToProduit(pr)" >
                 <img

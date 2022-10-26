@@ -7,18 +7,7 @@
         <span class="navbar-toggler-icon" ></span>
       </button>
       <div class=" navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item dropdown" data-toggle="dropdown"  aria-haspopup="true">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"  aria-expanded="false" style="color:orangered">
-              Produits par catégorie
-            </a>
-            <ul class="dropdown-menu" >
-              <li *ngFor="let c of categorie">
-                <a class="dropdown-item" href="about" target="_self" (click) = "filterBy('{{c}}')">{{c}}</a>
-              </li>
-            </ul>
-          </li>
-        </ul>
+        
         <form class="navbar-search navbar-search-light form-inline mr-sm-3 " id="navbar-search-main">
           <div class="form-group mb-0">
             <div class="input-group input-group-alternative input-group-merge">
