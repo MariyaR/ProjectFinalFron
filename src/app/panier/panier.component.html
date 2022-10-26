@@ -60,9 +60,14 @@
 <body class="bg-white">
     <!-- Header -->
     <div class="header bg-gradient-primary py-7 py-lg-8 pt-lg-9">
-      
+
+        <div class="d-flex justify-content-center " *ngIf = "panier.lignes.length < 1">
+            <h1 class = "text-white">Desole, votre panier est vide ...</h1>
+            </div>
     </div>
-      <div class="container-fluid w-75 mt--8">
+
+
+      <div class="container-fluid w-75 mt--8" *ngIf = "panier.lignes.length > 0">
         <div class="row">
           <!-- Light table -->
           <div class="col">
@@ -132,6 +137,7 @@
       </div>
     </div>
         </div>
+    
     </div>
 
   
