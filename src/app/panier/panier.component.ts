@@ -25,19 +25,23 @@ export class PanierComponent implements OnInit {
   plus(i: number){
     let x = Number(this.panier.lignes[i].nb);
     this.panier.lignes[i].nb = x+1;
-    this.panier.lignes[i].setPrix;
+    let prixTotal = Number(this.panier.lignes[i].prix);
+    this.panier.lignes[i].prix = prixTotal + Number(this.panier.lignes[i].art.prix);
     this.panier.total+=this.panier.lignes[i].art.prix;
     this.total = this.panier.total;
     console.log(this.panier)
+    sessionStorage.setItem("panier", JSON.stringify(this.panier));
   }
 
   minus(i: number){
     let x = Number(this.panier.lignes[i].nb);
     this.panier.lignes[i].nb = x-1;
     if(this.panier.lignes[i].nb > 0 ) {
-      this.panier.lignes[i].setPrix;
+      let prixTotal = Number(this.panier.lignes[i].prix);
+      this.panier.lignes[i].prix = prixTotal - Number(this.panier.lignes[i].art.prix);
       this.panier.total-=this.panier.lignes[i].art.prix;
       this.total = this.panier.total;
+      sessionStorage.setItem("panier", JSON.stringify(this.panier));
     }
     else {
       this.delete(i);}
@@ -48,6 +52,7 @@ export class PanierComponent implements OnInit {
     this.panier.lignes.splice(i,1);
     this.panier.total-=delPr;
     this.total = this.panier.total;
+    sessionStorage.setItem("panier", JSON.stringify(this.panier));
   }
 
   validate(){
