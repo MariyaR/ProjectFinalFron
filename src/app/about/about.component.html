@@ -214,15 +214,15 @@
           
          
           <div class="card h-100" *ngFor="let pr of produits; index as i">
-            <a >
+            <a href='ficheproduit' (click)="goToProduit(pr)">
                 <img
                 class="card-img-top"         
                 [src]="'../../assets/img/imgProducts/' + pr.images[0].nom" /></a>
-            <div class="card-body">
+            <div class="card-body" >
               
-              <a>
+              <a href='ficheproduit' (click)="goToProduit(pr)">
                 
-                <h4 class="card-title">
+                <h4 class="card-title" >
                   {{pr.reference}}
                 </h4>
                 {{pr.descriptionCourte}}

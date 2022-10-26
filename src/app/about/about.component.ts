@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Facture } from '../facture';
 import { Ligne } from '../ligne';
 import { PanierService } from '../panier.service';
@@ -19,7 +20,7 @@ export class AboutComponent implements OnInit {
   x:string;
   
   MyList: any;
-  constructor(private srvPr: ProduitServiceService, private srvPan : PanierService) { }
+  constructor(private srvPr: ProduitServiceService, private srvPan : PanierService, private router:Router) { }
 
   ngOnInit(): void {
     this.panier = JSON.parse(sessionStorage.getItem("panier"));
@@ -52,6 +53,12 @@ export class AboutComponent implements OnInit {
     console.log(sessionStorage.getItem("panier"))
 
     //this.srvPan.sendCommande(); // a supprimer apres integration avec back
+  }
+
+  goToProduit(p:Produit)
+  {
+    sessionStorage.setItem("produit",JSON.stringify(p));
+    this.router.navigate(['ficheproduit']);
   }
 
 }

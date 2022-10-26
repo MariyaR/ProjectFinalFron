@@ -1,0 +1,56 @@
+<br>
+<h1 class="card-title" style="text-align: center;">
+    {{p.categorie}} "{{p.reference}}" de {{p.marque}}
+  </h1>
+<br>
+    <div class="main ">
+    <div style="max-width:443px ;">
+        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+    
+    <div class="carousel-inner">
+      <div class="carousel-item active" *ngFor="let img of p.images">
+        <img [src]="'../../assets/img/imgProducts/' + img.nom"  class="d-block w-100" alt="...">
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+        </div>
+    </div>
+    <div style="max-width:443px ;">
+        <div class="card-body">
+  
+  <a> 
+    <h2>Le produit :</h2>
+    {{p.descriptionLongue}}
+    
+  </a>
+  <br>
+  <br>
+  <h2>Prix :</h2>
+  <a class="card-text"><h1 style="color:orangered">{{p.prix | number: '.2' }}€</h1></a>
+  <br>
+  <h2>Tailles disponibles :</h2>
+  <div class="d-flex flex-row bd-highlight mb-2">
+    <select name="tailles" id="tailles" class="form-select form-control" [(ngModel)] = "x">
+        <option [value]="taille.tailleId.taille" *ngFor = "let taille of p.tailles">{{taille.tailleId.taille}}</option>
+    </select>
+  </div>
+<br>
+  <div class = "d-flex flex-row bd-highlight mb-3">
+  <div class="p-1 bg-secondary w-25">
+    <input type="number" class="form-control form-control-alternative" placeholder="0" #nb>
+  </div>
+  <button class="btn btn-icon btn-3 btn-warning w-75 btn-sm " type="button" (click)="addToCart(p,nb.value, x)">
+    <span class="btn-inner--icon"><i class="ni ni-cart"></i></span>
+  <span class="btn-inner--text">Ajouter au panier</span>
+  </button>
+  </div>
+        </div>
+    </div>
+    </div>

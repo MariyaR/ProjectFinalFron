@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AboutComponent } from './about/about.component';
 import { EditProfileComponent } from './edit-profile/edit-profile.component';
+import { FicheproduitComponent } from './ficheproduit/ficheproduit.component';
 import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
 import { LoginComponent } from './login/login.component';
@@ -22,7 +23,11 @@ const routes: Routes = [
   {path: 'footer', component: FooterComponent},
 {path: '', redirectTo: '/about', pathMatch: 'full'},
 {path: 'userBarVertical', component: UserBarVerticalComponent},
+<<<<<<< HEAD
 {path: 'commandeValidation', component: MerciPageComponent},];
+=======
+{path: 'ficheproduit', component: FicheproduitComponent},];
+>>>>>>> front/ficheproduit
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

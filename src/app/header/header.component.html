@@ -14,7 +14,7 @@
             </a>
             <ul class="dropdown-menu" >
               <li *ngFor="let c of categorie">
-                <a class="dropdown-item" href="about" (click) = "filterBy('{{c}}')">{{c}}</a>
+                <a class="dropdown-item" href="about" target="_self" (click) = "filterBy('{{c}}')">{{c}}</a>
               </li>
             </ul>
           </li>
