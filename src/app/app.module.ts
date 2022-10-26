@@ -36,6 +36,7 @@ import { FicheproduitComponent } from './ficheproduit/ficheproduit.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpClientModule
   ],
   providers: [],
