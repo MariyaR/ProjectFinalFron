@@ -23,11 +23,9 @@ const routes: Routes = [
   {path: 'footer', component: FooterComponent},
 {path: '', redirectTo: '/about', pathMatch: 'full'},
 {path: 'userBarVertical', component: UserBarVerticalComponent},
-<<<<<<< HEAD
-{path: 'commandeValidation', component: MerciPageComponent},];
-=======
+{path: 'commandeValidation', component: MerciPageComponent},
 {path: 'ficheproduit', component: FicheproduitComponent},];
->>>>>>> front/ficheproduit
+
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

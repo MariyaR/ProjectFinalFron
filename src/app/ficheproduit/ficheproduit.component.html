@@ -38,7 +38,7 @@
   <h2>Tailles disponibles :</h2>
   <div class="d-flex flex-row bd-highlight mb-2">
     <select name="tailles" id="tailles" class="form-select form-control" [(ngModel)] = "x">
-        <option [value]="taille.tailleId.taille" *ngFor = "let taille of p.tailles">{{taille.tailleId.taille}}</option>
+        <option [value]="taille" *ngFor = "let taille of tailles">{{taille}}</option>
     </select>
   </div>
 <br>

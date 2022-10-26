@@ -14,9 +14,18 @@ export class FicheproduitComponent implements OnInit {
 
   p:Produit = JSON.parse(sessionStorage.getItem("produit"));
   x:any
+  tailles:Array<string> = new Array();
 
   ngOnInit(): void {
     console.log(this.p)
+    //console.log(this.p.tailles[0].tailleId)
+    
+    console.log(this.p.tailles[0]["taille"]);
+    
+    
+    this.p.tailles.forEach(x => this.tailles.push(x["taille"]));
+    console.log("tailles on init:")
+    console.log(this.tailles);
   }
 
   addToCart(pr: Produit, nb: any, taille : string){
