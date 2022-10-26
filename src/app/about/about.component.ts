@@ -22,8 +22,8 @@ export class AboutComponent implements OnInit {
   constructor(private srvPr: ProduitServiceService, private srvPan : PanierService) { }
 
   ngOnInit(): void {
-    this.panier = new Facture; //a supprimer
-    sessionStorage.setItem("panier",JSON.stringify(this.panier)); // a bougher a component login ou logged user
+    this.panier = JSON.parse(sessionStorage.getItem("panier"));
+    //sessionStorage.setItem("panier",JSON.stringify(this.panier)); // a bougher a component login ou logged user
 
     //this.srvPr.getInfo();
     //this.produits = JSON.parse(sessionStorage.getItem("lst"));

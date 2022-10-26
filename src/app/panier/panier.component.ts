@@ -67,6 +67,9 @@ export class PanierComponent implements OnInit {
       this.panier = JSON.parse(sessionStorage.getItem("panier"));
     }else 
       this.router.navigate(['login']);
+      console.log("panier after connexion");
+      console.log(JSON.parse(sessionStorage.getItem("panier")));
+      console.log(this.panier);
 
   }
 
