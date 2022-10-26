@@ -116,9 +116,9 @@
                                     <i class="fas fa-ellipsis-v"></i>
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
-                                    <a class="dropdown-item" (click) = "plus(i)">ajouter</a>
-                                    <a class="dropdown-item" (click) = "minus(i)">diminuer</a>
-                                    <a class="dropdown-item" (click) = "delete(i)">supprimer</a>
+                                    <a class="dropdown-item" ><div class="d-flex justify-content-around"> Aujouter <button (click) = "plus(i)" class="btn btn-secondary btn-sm">+</button></div></a>
+                                    <a class="dropdown-item" ><div class="d-flex justify-content-around">Diminuer <button (click) = "minus(i)" class="btn btn-secondary btn-sm">-</button></div></a>
+                                    <a class="dropdown-item" ><div class="d-flex justify-content-around">Supprimer <button (click) = "delete(i)" class="btn btn-secondary btn-sm">x</button></div></a>
                                 </div>
                             </div>
                         </td>

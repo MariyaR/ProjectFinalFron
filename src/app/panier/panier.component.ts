@@ -23,25 +23,29 @@ export class PanierComponent implements OnInit {
   }
 
   plus(i: number){
-    console.log(this.panier.lignes[i].nb)
     let x = Number(this.panier.lignes[i].nb);
     this.panier.lignes[i].nb = x+1;
     this.panier.lignes[i].setPrix;
     this.panier.total+=this.panier.lignes[i].art.prix;
     this.total = this.panier.total;
+    console.log(this.panier)
   }
 
   minus(i: number){
     let x = Number(this.panier.lignes[i].nb);
     this.panier.lignes[i].nb = x-1;
-    this.panier.lignes[i].setPrix;
-    this.panier.total-=this.panier.lignes[i].art.prix;
-    this.total = this.panier.total;
+    if(this.panier.lignes[i].nb > 0 ) {
+      this.panier.lignes[i].setPrix;
+      this.panier.total-=this.panier.lignes[i].art.prix;
+      this.total = this.panier.total;
+    }
+    else {
+      this.delete(i);}
   }
 
   delete(i: number){
     let delPr = this.panier.lignes[i].prix;
-    this.panier.lignes.splice(i);
+    this.panier.lignes.splice(i,1);
     this.panier.total-=delPr;
     this.total = this.panier.total;
   }
