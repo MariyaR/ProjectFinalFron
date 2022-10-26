@@ -1,78 +1,50 @@
-
-  
-  <nav id="navbar-main" class="navbar navbar-horizontal navbar-transparent navbar-main navbar-expand-lg navbar-light">
-    <div class="container">
+  <nav class="navbar navbar-expand-lg " >
+    <div class="container-fluid head" >
       <a class="navbar-brand" href="../../../index.html">
         <img src="../../assets/img/vintage-76.jpg" height="30">
       </a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" >
+        <span class="navbar-toggler-icon" ></span>
       </button>
-      <div class="navbar-collapse navbar-custom-collapse collapse" id="navbar-collapse">
-        <div class="navbar-collapse-header">
-          <div class="row">
-            <div class="col-6 collapse-brand">
-              <a href="../../../index.html">
-                <img src="../../assets/img/brand/dark.svg" height="40">
-              </a>
-            </div>
-            <div class="col-6 collapse-close">
-              <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
-                <span></span>
-                <span></span>
-              </button>
+      <div class=" navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item dropdown" data-toggle="dropdown"  aria-haspopup="true">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"  aria-expanded="false" style="color:orangered">
+              Produits par catégorie
+            </a>
+            <ul class="dropdown-menu" >
+              <li *ngFor="let c of categorie">
+                <a class="dropdown-item" href="about" (click) = "filterBy('{{c}}')">{{c}}</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+        <form class="navbar-search navbar-search-light form-inline mr-sm-3 " id="navbar-search-main">
+          <div class="form-group mb-0">
+            <div class="input-group input-group-alternative input-group-merge">
+              <div class="input-group-prepend" >
+                <span class="input-group-text"><i class="fas fa-search"></i></span>
+              </div>
+              <input class="form-control" placeholder="Rechercher" type="text" (change)="search()" [(ngModel)]="rechercher">
             </div>
           </div>
-        </div>
-        <ul class="navbar-nav mr-auto">
-          <form class="navbar-search navbar-search-light form-inline mr-sm-3 " id="navbar-search-main">
-            <div class="form-group mb-0">
-              <div class="input-group input-group-alternative input-group-merge">
-                <div class="input-group-prepend">
-                  <span class="input-group-text"><i class="fas fa-search"></i></span>
-                </div>
-                <input class="form-control" placeholder="Search" type="text">
-              </div>
-            </div>
-            <button type="button" class="close" data-action="search-close" data-target="#navbar-search-main" aria-label="Close">
-              <span aria-hidden="true">×</span>
-            </button>
-          </form>
-        </ul>
-        <hr class="d-lg-none" />
+        </form>
         <ul class="navbar-nav align-items-lg-center ml-lg-auto">
-          <li class="nav-item">
-            <a class="nav-link nav-link-icon"  data-toggle="tooltip" data-original-title="Mon Profile">
-              <i class="ni ni-single-02" (click) = "goToProfile()"></i>
+          <li *ngIf="logged" class="nav-item">
+            <a class="nav-link nav-link-icon" href="userProfile" target="_self" data-toggle="tooltip" data-original-title="Mon Profile">
+              <i class="ni ni-single-02" style="color:orangered"></i>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link nav-link-icon" href="#" target="_blank" data-toggle="tooltip" data-original-title="Mes favorites">
-              <i class="ni ni-favourite-28"></i>
+            <a class="nav-link nav-link-icon" href="panier" target="_self" data-toggle="tooltip" data-original-title="Panier">
+              <i class="ni ni-cart" style="color:orangered "></i>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link nav-link-icon" target="_blank" data-toggle="tooltip" data-original-title="Panier">
-              <i class="ni ni-cart" (click) = "goToCart()"></i>
-    
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link nav-link-icon" href="https://github.com/" target="_blank" data-toggle="tooltip" data-original-title="Github repo">
-              <i class="fab fa-github"></i>
-              <span class="nav-link-inner--text d-lg-none">Github</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            
-              <a href="#!" class="avatar avatar-xl rounded-circle">
-                <img alt="Image placeholder" src="https://th.bing.com/th/id/R.15747aa66483b5ef8f037b03bceda8eb?rik=%2b%2fZ2Vz9a4f3Ctw&pid=ImgRaw&r=0">
-              </a>
-            
+              <button *ngIf="logged" class="rechercher btn" type="button" (click) = "deconnexion()">Déconnexion</button>
+              <button *ngIf="!logged" class="rechercher btn" type="button" (click) = "connexion()">Connexion</button>
           </li>
         </ul>
       </div>
     </div>
   </nav>
-  
-  
