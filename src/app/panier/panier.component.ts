@@ -13,6 +13,7 @@ export class PanierComponent implements OnInit {
 
   panier : Facture;
   total: number;
+  logged:string;
 
   constructor(private srvPan: PanierService, private router:Router) { }
 
@@ -58,8 +59,14 @@ export class PanierComponent implements OnInit {
 
   validate(){
     //envoyer la request de validation
-    this.srvPan.sendCommande();
-    this.panier = JSON.parse(sessionStorage.getItem("panier"));
+    this.logged = sessionStorage.getItem("logged");
+    console.log("logged");
+    console.log(this.logged);
+    if(this.logged == String(true)) {
+      this.srvPan.sendCommande();
+      this.panier = JSON.parse(sessionStorage.getItem("panier"));
+    }else 
+      this.router.navigate(['login']);
 
   }
 
