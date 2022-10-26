@@ -27,7 +27,7 @@ export class AboutComponent implements OnInit {
     this.panier = JSON.parse(sessionStorage.getItem("panier"));
     if (this.panier === undefined) {
       console.log("panier was undefined")
-      this.panier = new Facture;
+      this.panier = new Facture();
       sessionStorage.setItem("panier", JSON.stringify(this.panier));
       console.log("after new panier");
       console.log(sessionStorage.getItem("panier"));
@@ -37,7 +37,7 @@ export class AboutComponent implements OnInit {
     //this.srvPr.getInfo();
     //this.produits = JSON.parse(sessionStorage.getItem("lst"));
     this.srvPr.getlist().then(x=>this.produits= x);
-    console.log(this.produits);
+    console.log("products in about "+ this.produits);
     this.panier = JSON.parse(sessionStorage.getItem("panier"));
     
 
@@ -47,10 +47,18 @@ export class AboutComponent implements OnInit {
   }
 
   addToCart(pr: Produit, i : number, nb: any, taille : string){
-    console.log(pr);
-    console.log(i);
-    console.log(nb);
-    console.log(JSON.stringify(this.x));
+    //console.log(pr);
+    //console.log(i);
+    //console.log(nb);
+    //console.log(JSON.stringify(this.x));
+
+    if (this.panier === undefined || this.panier === null) {
+      console.log("panier was undefined during adding to cart")
+      this.panier = new Facture();
+      sessionStorage.setItem("panier", JSON.stringify(this.panier));
+      console.log("after new panier");
+      console.log(sessionStorage.getItem("panier"));
+    }
 
     let ligne = new Ligne();
     ligne.art = pr;
@@ -59,8 +67,10 @@ export class AboutComponent implements OnInit {
     this.srvPan.addLigne(ligne);
     console.log("about: total:");
     //console.log(this.panier.total);
-    if (this.panier.total === undefined || this.panier.total === null)
-      this.panier.total = 0;
+    console.log("panier before calling total: " + this.panier);
+    if (this.panier.total === undefined || this.panier.total === null){
+      console.log("adding to cart, total was null or undefined");
+      this.panier.total = 0;}
     this.panier.total+=ligne.prix;
     console.log(sessionStorage.getItem("panier"))
 

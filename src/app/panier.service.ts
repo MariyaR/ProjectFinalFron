@@ -21,11 +21,15 @@ export class PanierService {
   addLigne(ligne: Ligne) {
     this.panier = JSON.parse(sessionStorage.getItem("panier"));
     if (this.panier == null){
-      this.panier = new Facture;
+      console.log("addLigne from panierService, panier was null")
+      this.panier = new Facture();
     }
     console.log("add to panier function, panier:");
     console.log(this.panier);
     this.panier.lignes.push(ligne);
+    if (this.panier.total === undefined || this.panier.total === null){
+      console.log("adding to cart, total was null or undefined");
+      this.panier.total = 0;}
     this.panier.total+=ligne.prix;
     sessionStorage.setItem("panier", JSON.stringify(this.panier));
   }

@@ -35,6 +35,8 @@ getlist()
 {
  return this.http.get("http://localhost:8080/produits").toPromise().then(res => {
     this.produits =res;
+    console.log("in produit service");
+    console.log("products: " + this.produits[0]["tailles"][0]["tailleId"]["taille"])
    return this.produits;
     // code here is executed on success
   })
