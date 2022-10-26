@@ -14,7 +14,7 @@
             </a>
             <ul class="dropdown-menu" >
               <li *ngFor="let c of categorie">
-                <a class="dropdown-item" href="about" (click) = "filterBy('{{c}}')">{{c}}</a>
+                <a class="dropdown-item" href="about" target="_self" (click) = "filterBy('{{c}}')">{{c}}</a>
               </li>
             </ul>
           </li>
@@ -25,7 +25,7 @@
               <div class="input-group-prepend" >
                 <span class="input-group-text"><i class="fas fa-search"></i></span>
               </div>
-              <input class="form-control" placeholder="Rechercher" type="text" (change)="search()" [(ngModel)]="rechercher">
+              <input class="form-control" placeholder="Rechercher" type="text" (change)="search()" [(ngModel)]="rechercher" name="rechercher">
             </div>
           </div>
         </form>

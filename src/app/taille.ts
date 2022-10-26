@@ -1,5 +1,7 @@
+import { TailleId } from "./taille-id";
+
 export class Taille {
-    taille:string;
+    tailleId:TailleId;
     stock: number;
 
 }

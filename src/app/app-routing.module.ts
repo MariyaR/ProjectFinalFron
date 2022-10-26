@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AboutComponent } from './about/about.component';
 import { EditProfileComponent } from './edit-profile/edit-profile.component';
+import { FicheproduitComponent } from './ficheproduit/ficheproduit.component';
 import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
 import { LoginComponent } from './login/login.component';
@@ -20,7 +21,8 @@ const routes: Routes = [
   {path: 'header', component: HeaderComponent},
   {path: 'footer', component: FooterComponent},
 {path: '', redirectTo: '/about', pathMatch: 'full'},
-{path: 'userBarVertical', component: UserBarVerticalComponent},];
+{path: 'userBarVertical', component: UserBarVerticalComponent},
+{path: 'ficheproduit', component: FicheproduitComponent},];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

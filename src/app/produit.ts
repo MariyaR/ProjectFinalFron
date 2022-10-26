@@ -11,4 +11,5 @@ export class Produit {
   marque: string;
   tailles: Array<Taille>=new Array();
   images: Array<Image>=new Array();
+  categorie:string;
 }
