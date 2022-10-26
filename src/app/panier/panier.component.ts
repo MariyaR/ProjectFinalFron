@@ -58,6 +58,7 @@ export class PanierComponent implements OnInit {
   validate(){
     //envoyer la request de validation
     this.srvPan.sendCommande();
+    
   }
 
 }

@@ -18,6 +18,8 @@ export class PanierService {
   constructor(private http:HttpClient) { }
 
   addLigne(ligne: Ligne) {
+    console.log("add to panier function, panier:");
+    console.log(this.panier);
     this.panier.lignes.push(ligne);
     this.panier.total+=ligne.prix;
     sessionStorage.setItem("panier", JSON.stringify(this.panier));

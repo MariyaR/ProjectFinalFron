@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MerciPageComponent implements OnInit {
 
+  commandeId:string;
   constructor() { }
 
   ngOnInit(): void {
