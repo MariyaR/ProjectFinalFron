@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 import { Facture } from './facture';
 import { Ligne } from './ligne';
 import { ProduitTo } from './produit-to';
@@ -13,9 +14,9 @@ export class PanierService {
 
   panier: Facture = new Facture(); //panier pour interagir avec le client
   produits : ProduitsTo = new ProduitsTo; //panier a anvoyer a back
-  message;
+  message:string;
 
-  constructor(private http:HttpClient) { }
+  constructor(private http:HttpClient, private router:Router) { }
 
   addLigne(ligne: Ligne) {
     console.log("add to panier function, panier:");
@@ -42,16 +43,20 @@ export class PanierService {
     console.log("I am panierSerive, ready to send to back this:")
     console.log(this.produits)
     console.log(JSON.stringify(this.produits));
-    this.http.post("http://localhost:8080/commandes", this.produits).toPromise().then(res => {
+    this.http.post("http://localhost:8080/commandes", this.produits, {responseType: 'text'}).toPromise().then(res => {
       this.message =res;
-      //redirect to thank you page
-     return this.message;
-      // code here is executed on success
-      //redirect to the panier
+      console.log("res");
+      sessionStorage.setItem("commandeId", res);
+      console.log(sessionStorage.getItem("commandeId"));
+      this.router.navigate(['commandeValidation']);
+      sessionStorage.setItem("panier", JSON.stringify(new Facture()));
+      return this.message;
+
     })
    .catch();
    console.log("response from server");
    console.log(this.message);
   }
+
     
 }

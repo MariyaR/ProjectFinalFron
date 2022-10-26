@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Facture } from '../facture';
 import { PanierService } from '../panier.service';
 
@@ -13,7 +14,7 @@ export class PanierComponent implements OnInit {
   panier : Facture;
   total: number;
 
-  constructor(private srvPan: PanierService) { }
+  constructor(private srvPan: PanierService, private router:Router) { }
 
   ngOnInit(): void {
     this.panier = JSON.parse(sessionStorage.getItem("panier"));
@@ -58,7 +59,8 @@ export class PanierComponent implements OnInit {
   validate(){
     //envoyer la request de validation
     this.srvPan.sendCommande();
-    
+    this.panier = JSON.parse(sessionStorage.getItem("panier"));
+
   }
 
 }

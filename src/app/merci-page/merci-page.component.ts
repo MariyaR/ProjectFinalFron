@@ -11,6 +11,9 @@ export class MerciPageComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    console.log("merci page, id:");
+    console.log(sessionStorage.getItem("commandeId"));
+    this.commandeId = sessionStorage.getItem("commandeId");
   }
 
 }
