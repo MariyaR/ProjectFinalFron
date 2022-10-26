@@ -62,7 +62,7 @@
     <div class="header bg-gradient-primary py-7 py-lg-8 pt-lg-9">
 
         <div class="d-flex justify-content-center " *ngIf = "panier.lignes.length < 1">
-            <h1 class = "text-white">Desole, votre panier est vide ...</h1>
+            <h1 class = "text-white">Desolé, votre panier est vide ...</h1>
             </div>
     </div>
 
@@ -76,7 +76,7 @@
               <div class="card-header border-0">
                 <div class="d-flex justify-content-between">
                 <h3 class="mb-0">Total : {{total | number: '.2'}}€ </h3>
-                <button class="btn btn-default" (click)="validate()">valider votre panier</button>
+                <button class="btn btn-warning" (click)="validate()">Valider votre panier</button>
                 </div>
               </div>
       <div class="table-responsive" >
@@ -105,7 +105,7 @@
                                     <img  [src]="'../../assets/img/imgProducts/' + ligne.art.images[0].nom" style="height : 100px;"  src="">
                                 </a>
                                 <div class="media-body">
-                                    <span class="name mb-0 text-sm">{{ligne.art.reference}} taille: XL</span>
+                                    <span class="name mb-0 text-sm">"{{ligne.art.reference}}" taille {{ligne.taille}}</span>
                                 </div>
                             </div>
                         </th>
@@ -121,9 +121,9 @@
                                     <i class="fas fa-ellipsis-v"></i>
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
-                                    <a class="dropdown-item" ><div class="d-flex justify-content-around"> Aujouter <button (click) = "plus(i)" class="btn btn-secondary btn-sm">+</button></div></a>
-                                    <a class="dropdown-item" ><div class="d-flex justify-content-around">Diminuer <button (click) = "minus(i)" class="btn btn-secondary btn-sm">-</button></div></a>
-                                    <a class="dropdown-item" ><div class="d-flex justify-content-around">Supprimer <button (click) = "delete(i)" class="btn btn-secondary btn-sm">x</button></div></a>
+                                    <a class="dropdown-item" ><div class="d-flex justify-content-between">Ajouter<button (click) = "plus(i)" class="btn btn-secondary btn-sm">+</button></div></a>
+                                    <a class="dropdown-item" ><div class="d-flex justify-content-between">Diminuer<button (click) = "minus(i)" class="btn btn-secondary btn-sm">-</button></div></a>
+                                    <a class="dropdown-item" ><div class="d-flex justify-content-between">Supprimer<button (click) = "delete(i)" class="btn btn-secondary btn-sm">x</button></div></a>
                                 </div>
                             </div>
                         </td>

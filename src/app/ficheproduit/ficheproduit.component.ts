@@ -15,6 +15,7 @@ export class FicheproduitComponent implements OnInit {
   p:Produit = JSON.parse(sessionStorage.getItem("produit"));
   x:any
   tailles:Array<string> = new Array();
+  message:string ="";
 
   ngOnInit(): void {
     console.log(this.p)
@@ -36,6 +37,7 @@ export class FicheproduitComponent implements OnInit {
     ligne.taille=taille;
     ligne.setPrix();
     this.srvpan.addLigne(ligne);
+    this.message="Article ajouté au panier !";
   }
 
 }

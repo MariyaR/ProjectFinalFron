@@ -42,7 +42,7 @@ export class PanierService {
       let produitTo = new ProduitTo();
       produitTo.produit = element.art;
       produitTo.quantite = element.nb;
-      produitTo.taille = "L";
+      produitTo.taille = element.taille;
       this.produits.produits.push(produitTo);
     });
     this.produits.total = this.getTotal();

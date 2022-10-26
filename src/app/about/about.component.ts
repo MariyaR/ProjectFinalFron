@@ -55,6 +55,7 @@ export class AboutComponent implements OnInit {
     let ligne = new Ligne();
     ligne.art = pr;
     ligne.nb = nb;
+    ligne.taille=taille;
     ligne.setPrix();
     this.srvPan.addLigne(ligne);
     console.log("about: total:");

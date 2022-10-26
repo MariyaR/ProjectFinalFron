@@ -113,63 +113,15 @@
     <div class="main-content">
       <!-- Header -->
       <div class="header bg-gradient-primary py-7 py-lg-8">
-        <div class="container">
-          <nav class="navbar navbar-horizontal navbar-expand-lg navbar-light mt--3">
-            <div class="container-fluid justify-content-center">
-                  
-                    
-                    <div class="btn-group">
-                      <button type="button" class="btn bg-transparent dropdown-toggle text-white " data-toggle="dropdown"  aria-haspopup="true" aria-expanded="false">
-                        <u><span style="font-size:25px;">Femmes</span></u></button>
-                      <div class="dropdown-menu">
-                        <a class="dropdown-item" href="#">T-shirts</a>
-                        <a class="dropdown-item" href="#">Pulls</a>
-                        <a class="dropdown-item" href="#">Polos</a>
-                        <a class="dropdown-item" href="#">Vestes</a>
-                      </div>
-                    </div><!-- /btn-group -->
-                    
-                    <div class="btn-group">
-                      <button type="button" class="btn bg-transparent dropdown-toggle text-white " data-toggle="dropdown"  aria-haspopup="true" aria-expanded="false">
-                        <u><span style="font-size:25px;">Hommes</span></u></button>
-                      <div class="dropdown-menu">
-                        <a class="dropdown-item" href="#">T-shirts</a>
-                        <a class="dropdown-item" href="#">Pulls</a>
-                        <a class="dropdown-item" href="#">Polos</a>
-                        <a class="dropdown-item" href="#">Vestes</a>
-                      </div>
-                    </div>
-
-                    <div class="btn-group">
-                      <button type="button" class="btn bg-transparent dropdown-toggle text-white " data-toggle="dropdown"  aria-haspopup="true" aria-expanded="false">
-                        <u><span style="font-size:25px;">Accesoires</span></u></button>
-                      <div class="dropdown-menu">
-                        <a class="dropdown-item" href="#">T-shirts</a>
-                        <a class="dropdown-item" href="#">Pulls</a>
-                        <a class="dropdown-item" href="#">Polos</a>
-                        <a class="dropdown-item" href="#">Vestes</a>
-                      </div>
-                    </div>
-
-                    <div class="btn-group">
-                      <button type="button" class="btn bg-transparent dropdown-toggle text-white " data-toggle="dropdown"  aria-haspopup="true" aria-expanded="false">
-                        <u><span style="font-size:25px;">Deco</span></u></button>
-                      <div class="dropdown-menu">
-                        <a class="dropdown-item" href="#">T-shirts</a>
-                        <a class="dropdown-item" href="#">Pulls</a>
-                        <a class="dropdown-item" href="#">Polos</a>
-                        <a class="dropdown-item" href="#">Vestes</a>
-                      </div>
-                    </div>
-                  
-                </div>
-        
-          </nav>
+        <div class="separator separator-bottom separator-skew zindex-100">
+          <svg x="0" y="0" viewBox="0 0 2560 100" preserveAspectRatio="none" version="1.1" xmlns="http://www.w3.org/2000/svg">
+            <polygon class="fill-white" points="2560 0 2560 100 0 100"></polygon>
+          </svg>
         </div>
       </div>
 
-      <div class = "container mt--6">
-        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+      <div class = "container mt--9 pb-5" >
+        <div id="carouselExampleIndicators" class="carousel slide " data-bs-ride="carousel" >
             <div class="carousel-indicators">
               <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
               <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
@@ -177,7 +129,7 @@
               <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
               <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4" aria-label="Slide 5"></button>
             </div>
-            <div class="carousel-inner">
+            <div class="carousel-inner" style="border-radius: 50px;">
               <div class="carousel-item active">
                 <img src="../../assets/img/car1.jpg" class="d-block w-100" alt="...">
               </div>
@@ -214,25 +166,27 @@
           
          
           <div class="card h-100" *ngFor="let pr of produits; index as i">
-            <a href='ficheproduit' (click)="goToProduit(pr)">
+            <a href='ficheproduit' (click)="goToProduit(pr)" >
                 <img
                 class="card-img-top"         
-                [src]="'../../assets/img/imgProducts/' + pr.images[0].nom" /></a>
-            <div class="card-body" >
-              
-              <a href='ficheproduit' (click)="goToProduit(pr)">
+                [src]="'../../assets/img/imgProducts/' + pr.images[0].nom" style="max-height: 356px; max-width: 356px; min-height: 356px; min-width: 356px; object-fit: contain;"/></a>
+            <div class="card-body" style="min-height: 350px; display: flex; flex-direction: column; justify-content: space-between;">
+              <div>
+              <a href='ficheproduit' (click)="goToProduit(pr)" style="max-height: 300px; text-align: center;">
                 
-                <h4 class="card-title" >
+                <h3 class="card-title" >
                   {{pr.reference}}
-                </h4>
-                {{pr.descriptionCourte}}
+                </h3>
+                <p><b>{{pr.descriptionCourte}}</b></p>
               
               </a>
-              <a class="card-text"><h1>{{pr.prix | number: '.2' }}€</h1></a>
+            </div>
+            <div>
+              <a class="card-text" style="text-align:center"><h1>{{pr.prix | number: '.2' }}€</h1></a>
               
               <div class="d-flex flex-row bd-highlight mb-2">
                 <select name="tailles" id="tailles" class="form-select form-control" [(ngModel)] = "x">
-                    <option [value]="taille" *ngFor = "let taille of pr.tailles">{{taille.taille}}</option>
+                    <option [value]="taille.tailleId.taille" *ngFor = "let taille of pr.tailles">{{taille.tailleId.taille}}</option>
                 </select>
               </div>
 
@@ -242,12 +196,10 @@
               </div>
               <button class="btn btn-icon btn-3 btn-warning w-75 btn-sm " type="button" (click)="addToCart(pr,i, nb.value, x)">
                 <span class="btn-inner--icon"><i class="ni ni-cart"></i></span>
-              <span class="btn-inner--text">ajouter a panier</span>
+              <span class="btn-inner--text">ajouter au panier</span>
               </button>
               </div>
-              <h5 class="card-title" style="color: #120ab3">
-                Recevez-le <strong>jeudi 6 novembre</strong> Livraison GRATUITE
-              </h5>
+              </div>
             </div>
           </div>
           <!-- </div> -->
