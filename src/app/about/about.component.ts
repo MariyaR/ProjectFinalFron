@@ -23,7 +23,15 @@ export class AboutComponent implements OnInit {
   constructor(private srvPr: ProduitServiceService, private srvPan : PanierService, private router:Router) { }
 
   ngOnInit(): void {
+
     this.panier = JSON.parse(sessionStorage.getItem("panier"));
+    if (this.panier === undefined) {
+      console.log("panier was undefined")
+      this.panier = new Facture;
+      sessionStorage.setItem("panier", JSON.stringify(this.panier));
+      console.log("after new panier");
+      console.log(sessionStorage.getItem("panier"));
+    }
     //sessionStorage.setItem("panier",JSON.stringify(this.panier)); // a bougher a component login ou logged user
 
     //this.srvPr.getInfo();
@@ -49,6 +57,10 @@ export class AboutComponent implements OnInit {
     ligne.nb = nb;
     ligne.setPrix();
     this.srvPan.addLigne(ligne);
+    console.log("about: total:");
+    //console.log(this.panier.total);
+    if (this.panier.total === undefined || this.panier.total === null)
+      this.panier.total = 0;
     this.panier.total+=ligne.prix;
     console.log(sessionStorage.getItem("panier"))
 

@@ -19,6 +19,10 @@ export class PanierService {
   constructor(private http:HttpClient, private router:Router) { }
 
   addLigne(ligne: Ligne) {
+    this.panier = JSON.parse(sessionStorage.getItem("panier"));
+    if (this.panier == null){
+      this.panier = new Facture;
+    }
     console.log("add to panier function, panier:");
     console.log(this.panier);
     this.panier.lignes.push(ligne);
