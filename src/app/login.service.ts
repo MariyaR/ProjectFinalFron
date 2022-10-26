@@ -1,26 +1,20 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { Client } from '../client';
-import { LoginService } from '../login.service';
-import { Utilisateur } from '../utilisateur';
+import { Utilisateur } from './utilisateur';
 
-@Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+@Injectable({
+  providedIn: 'root'
 })
-export class LoginComponent implements OnInit {
+export class LoginService {
 
   utilisateur:Utilisateur = new Utilisateur();
   message:string;
   erreur:boolean = false;
   logged:boolean = false;
 
-  constructor(private http : HttpClient, private router:Router, private srvLogin : LoginService) { }
 
-  ngOnInit(): void {
-  }
+  constructor(private http : HttpClient, private router:Router) { }
 
   connexion()
   {
@@ -42,11 +36,5 @@ export class LoginComponent implements OnInit {
         this.erreur = true
         this.message="Erreur d'authentification : " + err.error.message;
       })
-     /* this.srvLogin.connexion();
-      this.utilisateur = this.srvLogin.utilisateur;
-      this.message = this.srvLogin.message;
-      this.erreur = this.srvLogin.erreur;
-      this.logged = this.srvLogin.logged;*/
   }
-
 }

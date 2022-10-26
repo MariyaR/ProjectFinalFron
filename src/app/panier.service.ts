@@ -12,7 +12,7 @@ import { ProduitsTo } from './produits-to';
 export class PanierService {
   client: string = "2";
 
-  panier: Facture = new Facture(); //panier pour interagir avec le client
+  panier: Facture = JSON.parse(sessionStorage.getItem("panier")); //panier pour interagir avec le client
   produits : ProduitsTo = new ProduitsTo; //panier a anvoyer a back
   message:string;
 
