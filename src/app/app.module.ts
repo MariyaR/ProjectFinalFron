@@ -34,6 +34,7 @@ import { MerciPageComponent } from './merci-page/merci-page.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpClientModule
   ],
   providers: [],
