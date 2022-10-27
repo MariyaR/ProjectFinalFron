@@ -1,0 +1,49 @@
+
+  
+  
+<h1>Annuaire</h1>
+<div id="main">
+  <div>
+    
+
+    <app-personne-detail [user]="showUser"></app-personne-detail>
+  </div>
+  
+  <div>
+
+    <h3 *ngIf="!usersEmpty()">Tous les utilisateurs</h3>
+    <h3 *ngIf="usersEmpty()">Aucun utilisateurs</h3>
+  
+    <!-- Ici un tableau affichant chaque utilisateur en bdd -->
+    <table >
+      <tr>
+        <th><input type="checkbox"></th>
+        <th>Nom</th>
+        <th>Prenom</th>
+        <th></th>
+      </tr>
+      <tr *ngFor="let c of client; let i = index">
+        <td><input type="checkbox"></td>
+        <td>{{ c.nom }}</td>
+        <td>{{ c.prenom }}</td>
+        <td><button (click)="edit(i)">Edit</button><button (click)="show(i)">Show</button></td>
+      </tr>
+    </table>
+    <button (click)="deleteAll()" *ngIf="client.length > 0">
+      Vider la liste
+    </button>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal" *ngIf="!modalClosed">
+  <div>
+    <div><button (click)="closeModal()">X</button></div>
+    
+   </div>
+</div>
+
+
+    
+
+

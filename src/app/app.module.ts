@@ -16,6 +16,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import { MerciPageComponent } from './merci-page/merci-page.component';
 import { FicheproduitComponent } from './ficheproduit/ficheproduit.component';
+import { AdminComponent } from './admin/admin.component';
+import { PersonneDetailComponent } from './personne-detail/personne-detail.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,9 @@ import { FicheproduitComponent } from './ficheproduit/ficheproduit.component';
     FooterComponent,
     UserBarVerticalComponent,
     MerciPageComponent,
-    FicheproduitComponent
+    FicheproduitComponent,
+    AdminComponent,
+    PersonneDetailComponent
   ],
   imports: [
     BrowserModule,
