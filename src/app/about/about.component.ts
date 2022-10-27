@@ -17,10 +17,11 @@ export class AboutComponent implements OnInit {
   
   produits:Array<any>=new Array<any>();
   panier : Facture;
-  tailles : Array<any>=new Array<any>();
+  tailles :  Map<string, string> = new Map();
   x:string;
   filtre:string;
   categorie:Array<string>;
+  single_taiile:string;
   
   message2=JSON.parse(sessionStorage.getItem("filtre"));
   
@@ -61,7 +62,7 @@ export class AboutComponent implements OnInit {
 
   }
 
-  addToCart(pr: Produit, i : number, nb: any, taille : string){
+  addToCart(pr: Produit, i : number, nb: any, taille : string, key: string){
     console.log(pr);
     console.log(i);
     console.log(nb);
@@ -78,7 +79,9 @@ export class AboutComponent implements OnInit {
     ligne.nb = nb;
     console.log("taiile from about " + taille);
     console.log("x from about " + this.x);
-    ligne.taille=this.x;
+    if ( this.single_taiile=== undefined || this.single_taiile=== null)
+      this.single_taiile = "XL";
+    ligne.taille=this.tailles[key];
     ligne.setPrix();
     this.srvPan.addLigne(ligne);
     console.log("about: total:");
@@ -100,6 +103,13 @@ export class AboutComponent implements OnInit {
   filterBy(filtre:string)
   {
     this.filtre = filtre;
+  }
+
+  onSelectChange(str: string, reference:string){
+    console.log("select option: " + str);
+    this.single_taiile = str;
+    this.tailles[reference] = str;
+    console.log("tailles[reference]: " + reference + " " + this.tailles[reference]);
   }
 
 }
