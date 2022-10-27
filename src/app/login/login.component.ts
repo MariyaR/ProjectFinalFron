@@ -1,5 +1,5 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs/internal/Observable';
 import { Client } from '../client';
@@ -18,6 +18,8 @@ export class LoginComponent implements OnInit {
   erreur:boolean = false;
   logged:boolean = false;
   globalLogged : Observable<string>;
+
+  @Output() afterSubmit = new EventEmitter<VoidFunction>();
 
   constructor(private http : HttpClient, private router:Router, private srvLogin : LoginService) { }
 
@@ -41,7 +43,7 @@ export class LoginComponent implements OnInit {
       console.log("after changing global logged");
       console.log(this.srvLogin.getMyGV());
       sessionStorage.setItem("logged",JSON.stringify(this.logged));
-      this.router.navigate(['about']);
+      this.afterSubmit.emit();
       
     },
       err => {

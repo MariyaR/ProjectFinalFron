@@ -15,6 +15,7 @@ export class HeaderComponent implements OnInit {
   logged:boolean = false;
   lgd:string = "false";
   globalLogged : Observable<string>;
+  modalClosed = true;
 
   ngOnInit(): void {
     this.globalLogged = this.srvLogin.getMyGV(); 
@@ -37,7 +38,7 @@ deconnexion()
 
 connexion()
 {
-  this.router.navigate(['login']);
+  this.modalClosed=false;
 }
 
 
@@ -50,6 +51,10 @@ filterBy(filtre:string)
 search()
 {
   console.log(this.rechercher)
+}
+
+closeModal() {
+  this.modalClosed = true;
 }
 
 }

@@ -14,6 +14,7 @@ export class PanierComponent implements OnInit {
   panier : Facture;
   total: number;
   logged:string;
+  modalClosed = true;
 
   constructor(private srvPan: PanierService, private router:Router) { }
 
@@ -68,7 +69,7 @@ export class PanierComponent implements OnInit {
     console.log("logged");
     console.log(this.logged);
     if(this.logged == String(true)) {
-      this.router.navigate(['validationadresse']);
+      this.modalClosed=false;
       //this.srvPan.sendCommande();
       //this.panier = JSON.parse(sessionStorage.getItem("panier"));
     }else 
@@ -77,6 +78,10 @@ export class PanierComponent implements OnInit {
       console.log(JSON.parse(sessionStorage.getItem("panier")));
       console.log(this.panier);
 
+  }
+
+  closeModal() {
+    this.modalClosed = true;
   }
 
 }

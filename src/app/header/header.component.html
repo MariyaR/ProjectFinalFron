@@ -37,3 +37,14 @@
       </div>
     </div>
   </nav>
+
+  <div class="modal" *ngIf="!modalClosed">
+    <div>
+      <div style="display: flex; justify-content: right;">
+        <button (click)="closeModal()" type="button" class="btn-close" aria-label="Close"></button>
+        </div>
+      <!--Votre contenu ici -->
+      <!-- Un nouveau composant -> personne-form-->
+      <app-login (afterSubmit)="closeModal()"></app-login>
+     </div>
+  </div>
