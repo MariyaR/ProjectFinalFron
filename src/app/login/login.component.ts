@@ -39,6 +39,7 @@ export class LoginComponent implements OnInit {
       this.message="Authentification valide"
       sessionStorage.setItem("client",JSON.stringify(response));
       this.logged=true;
+      console.log("I am connexion function!!!!!!!!!!!!!!!!!!!!!!!!!")
       this.srvLogin.setMyGV("true");
       console.log("after changing global logged");
       console.log(this.srvLogin.getMyGV());
