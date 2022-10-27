@@ -29,7 +29,8 @@ export class HeaderComponent implements OnInit {
 
 deconnexion()
 {
-  this.logged = !this.logged
+  this.logged = !this.logged;
+  this.srvLogin.setMyGV("false");
   sessionStorage.setItem("logged",JSON.stringify(this.logged));
   this.router.navigate(['about']);
 }
