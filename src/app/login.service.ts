@@ -1,6 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
+import { BehaviorSubject } from 'rxjs/internal/BehaviorSubject';
 import { Utilisateur } from './utilisateur';
 
 @Injectable({
@@ -8,33 +9,15 @@ import { Utilisateur } from './utilisateur';
 })
 export class LoginService {
 
-  utilisateur:Utilisateur = new Utilisateur();
-  message:string;
-  erreur:boolean = false;
-  logged:boolean = false;
+  public globalLogged$ = new BehaviorSubject<string>("false");
 
+  constructor() { }
 
-  constructor(private http : HttpClient, private router:Router) { }
+  setMyGV(val : string){
+    this.globalLogged$.next(val);
+  }
 
-  connexion()
-  {
-    const body = JSON.stringify(this.utilisateur)
-    this.http.post("http://localhost:8080/utilisateur/connexion",body,{
-      headers: new HttpHeaders({
-        "Content-Type": "application/json"
-      }), responseType: "json"
-    }).subscribe(response => {
-      this.erreur=false;
-      this.message="Authentification valide"
-      sessionStorage.setItem("client",JSON.stringify(response));
-      this.logged=true;
-      sessionStorage.setItem("logged",JSON.stringify(this.logged));
-      console.log(sessionStorage.getItem("logged"));
-      this.router.navigate(['about']);
-    },
-      err => {
-        this.erreur = true
-        this.message="Erreur d'authentification : " + err.error.message;
-      })
+  getMyGV(){
+    return this.globalLogged$.asObservable();
   }
 }
