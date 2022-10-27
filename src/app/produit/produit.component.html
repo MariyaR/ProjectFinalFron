@@ -1,0 +1,43 @@
+<div class="table-responsive" >
+    <div>
+        <table class="table align-items-center ">
+            <thead class="thead-light">
+                <tr>
+                    <th scope="col" class="sort" data-sort="name">Item</th>
+                    <th scope="col" class="sort" data-sort="name">Article</th>
+                    <th scope="col" class="sort" data-sort="budget">Quantite</th>
+                    <th scope="col" class="sort" data-sort="status">Prix total</th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody class="list">
+                <tr *ngFor="let ligne of commande.produits; index as i">
+                    
+                    <td class="budget">
+                        {{i+1}}
+                      </td>
+                    <th scope="row">
+                        <div class="media align-items-center">
+                            <a  class=" mr-3">
+                                <img  [src]="'../../assets/img/imgProducts/' + ligne.images[0].nom" style="height : 100px;"  src="">
+                            </a>
+                            <div class="media-body">
+                                <span class="name mb-0 text-sm">"{{ligne.reference}}" taille {{ligne.tailles}}</span>
+                            </div>
+                        </div>
+                    </th>
+                    <td class="budget">
+                      <!-- {{ligne.nb}} -->
+                    </td>
+                    <td class="budget">
+                        {{ligne.prix | number: '.2' }}€
+                    </td>
+                    <td class="text-right">
+                    </td>
+                </tr>
+            </tbody>
+            
+        </table>
+      </div>
+    
+  </div>

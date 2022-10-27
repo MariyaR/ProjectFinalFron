@@ -109,118 +109,139 @@
   </head>
 
   <body class="bg-white">
-    <app-user-bar-vertical></app-user-bar-vertical>
     <!-- Main content -->
     <div class="main-content">
       <!-- Header -->
       <div class="header bg-gradient-primary py-7 py-lg-8 pt-lg-9">
-        <div class="container mt--6">
-          <h1 class="text-white mt-6 mb-4">Votres offres du moment:</h1>
-
-          <div class="card-deck">
-            <div style="width: 20rem">
-              <div class="card card-stats">
-                <!-- Card body -->
-                <div class="card-body">
-                  <div class="row">
-                    <div class="col">
-                      <h5 class="card-title text-uppercase text-muted my-3">
-                        Offre de votre enniversaire
-                      </h5>
-                      <span class="h2 font-weight-bold mb-0"
-                        >-10% sur tout le site</span
-                      >
-                    </div>
-                    <div class="col-auto">
-                      <div
-                        class="icon icon-shape bg-orange text-white rounded-circle shadow"
-                      >
-                        <i class="ni ni-chart-pie-35"></i>
-                      </div>
-                    </div>
-                  </div>
-                  <button type="button" class="btn btn-warning mt-2 w-100">
-                    Appliquer
-                  </button>
-                </div>
-              </div>
-            </div>
-
-            <div style="width: 20rem">
-              <div class="card card-stats">
-                <!-- Card body -->
-                <div class="card-body">
-                  <div class="row">
-                    <div class="col">
-                      <h5 class="card-title text-uppercase text-muted my-3">
-                        Offre de votre enniversaire
-                      </h5>
-                      <span class="h2 font-weight-bold mb-0"
-                        >-10% sur tout le site</span
-                      >
-                    </div>
-                    <div class="col-auto">
-                      <div
-                        class="icon icon-shape bg-orange text-white rounded-circle shadow"
-                      >
-                        <i class="ni ni-check-bold"></i>
-                      </div>
-                    </div>
-                  </div>
-                  <button type="button" class="btn btn-warning mt-2 w-100">
-                    Appliquer
-                  </button>
-                </div>
-              </div>
-            </div>
-
-            <div style="width: 20rem">
-              <div class="card card-stats">
-                <!-- Card body -->
-                <div class="card-body">
-                  <div class="row">
-                    <div class="col">
-                      <h5 class="card-title text-uppercase text-muted my-3">
-                        Offre de votre enniversaire
-                      </h5>
-                      <span class="h2 font-weight-bold mb-0"
-                        >-10% sur tout le site</span
-                      >
-                    </div>
-                    <div class="col-auto">
-                      <div
-                        class="icon icon-shape bg-orange text-white rounded-circle shadow"
-                      >
-                        <i class="ni ni-active-40"></i>
-                      </div>
-                    </div>
-                  </div>
-                  <button type="button" class="btn btn-warning mt-2 w-100">
-                    Appliquer
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="separator separator-bottom separator-skew zindex-100">
-          <svg
-            x="0"
-            y="0"
-            viewBox="0 0 2560 100"
-            preserveAspectRatio="none"
-            version="1.1"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <polygon
-              class="fill-white"
-              points="2560 0 2560 100 0 100"
-            ></polygon>
+              <div class="separator separator-bottom separator-skew zindex-100">
+          <svg x="0" y="0" viewBox="0 0 2560 100" preserveAspectRatio="none" version="1.1" xmlns="http://www.w3.org/2000/svg">
+            <polygon class="fill-white" points="2560 0 2560 100 0 100"></polygon>
           </svg>
         </div>
       </div>
-      <!-- Page content -->
-      <div class="container mt--9 pb-5 text-gray"></div>
+      <div class="container mt--9 pb-5 " style="width: 60%;">
+        <!-- Table -->
+        <div class="row justify-content-center">
+            <div class="card bg-secondary border border-soft">
+              <div class="card-header bg-transparent pb-5">
+
+      <div class="main ">
+        <br>
+        <div style="display: flex; justify-content: center;">
+        <div style="display: flex; justify-content: space-around; width: 500px;">
+            <button class=" btn btn-warning" aria-current="page" (click)="showInformation()">Mes informations</button>
+            <button class=" btn btn-warning" (click)="showCommandes()">Mes commandes</button>
+        </div>
+        </div>
+        <div *ngIf="showInfo">
+
+          <div style="text-align:center">
+            <br>
+            <br>
+            <h1>Vos informations</h1>
+            <br>
+        </div>
+            <div style="display: flex; justify-content: space-evenly ;">
+                <div class="input-group input-group-merge input-group-alternative mb-3" style="max-width: 35%;" >
+                    <div class="input-group-prepend">
+                      <span class="input-group-text">Prénom : {{client.prenom}}</span>
+                    </div>
+                </div>
+            <div class="input-group input-group-merge input-group-alternative mb-3" style="max-width: 35%;" >
+              <div class="input-group-prepend" >
+                <span class="input-group-text" >Nom : {{client.nom}}</span>
+              </div>
+            </div>
+            </div>
+            <div style="display: flex; justify-content:center ;">
+            <div class="input-group input-group-merge input-group-alternative mb-3" style="max-width: 35%;" >
+                <div class="input-group-prepend">
+                  <span class="input-group-text">Téléphone : {{client.telephone}}</span>
+                </div>
+            </div>
+            </div>
+            <br>
+            <div style="display: flex; justify-content: space-evenly ;">
+            <div class="input-group input-group-merge input-group-alternative mb-3" style="max-width: 35%;">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">Numéro de rue : {{client.adresse.num_rue}}</span>
+                </div>
+            </div>
+            <div class="input-group input-group-merge input-group-alternative mb-3" style="max-width: 35%;">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">Rue : {{client.adresse.rue}}</span>
+                </div>
+            </div>
+             </div>
+             <div style="display: flex; justify-content: space-evenly ;">
+            <div class="input-group input-group-merge input-group-alternative mb-3" style="max-width: 35%;">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">CP : {{client.adresse.cp}}</span>
+                </div>
+            </div>
+            <div class="input-group input-group-merge input-group-alternative mb-3" style="max-width: 35%;">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">Ville : {{client.adresse.ville}}</span>
+                </div>
+            </div>
+            </div>
+            <br>
+            <div class="d-flex" style="justify-content: center;">
+                <button class="btn btn-warning" (click)="modifier()">Modifier vos coordonnées</button>
+                </div>
+
+
+        </div>
+        <div *ngIf="showComm">
+
+          <br>
+
+        <table id="commandes" *ngIf="commandesEmpty()">
+          <tr class="bg-gradient-primary" style="color: white;">
+            <th>Numéro de la commande</th>
+            <th>Date de la commande</th>
+            <th>Prix total</th>
+            <th></th>
+          </tr>
+          <tr *ngFor="let c of commandes;let i = index">
+            <td>{{ c.id }}</td>
+            <td>{{ c.dateCreation }}</td>
+            <td>{{ c.total | number: '.2'}}€</td>
+            <td><button class=" btn btn-warning" (click)="showDetail(i)">Détails</button></td>
+          </tr>
+        </table>
+      </div>
+      </div>
+
+
+     
+
+              </div>
+            </div>
+        </div></div>
     </div>
+  
+    <div class="modal" *ngIf="!modalInfoClosed">
+      <div>
+        <div style="display: flex; justify-content: right;">
+          <button (click)="closeModal()" type="button" class="btn-close" aria-label="Close"></button>
+          </div>
+        <!--Votre contenu ici -->
+        <!-- Un nouveau composant -> personne-form-->
+        <app-clientform (afterSubmit)="closeModal()"></app-clientform>
+       </div>
+    </div>
+
+    <div class="modal" *ngIf="!modalCommClosed">
+      <div>
+        <div style="display: flex; justify-content: right;">
+          <button (click)="closeModal()" type="button" class="btn-close" aria-label="Close"></button>
+          </div>
+        <!--Votre contenu ici -->
+        <!-- Un nouveau composant -> personne-form-->
+        <app-produit [commande]="commande"></app-produit>
+       </div>
+    </div>
+  
   </body>
 </html>

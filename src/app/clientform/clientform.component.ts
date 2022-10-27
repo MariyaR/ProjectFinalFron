@@ -52,6 +52,7 @@ export class ClientformComponent implements OnInit {
     this.client.adresse = this.adresse;
 
     const body = JSON.stringify(this.client);
+    console.log(body)
     
     this.http.put("http://localhost:8080/client",body,{
       headers: new HttpHeaders({
@@ -60,7 +61,7 @@ export class ClientformComponent implements OnInit {
     }).subscribe(response =>{
       sessionStorage.setItem("client",JSON.stringify(response));
       this.afterSubmit.emit();
-      location.reload();
+      //location.reload();
     },
     err =>{
       this.erreur =true

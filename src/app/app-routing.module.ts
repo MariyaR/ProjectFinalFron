@@ -9,6 +9,7 @@ import { HeaderComponent } from './header/header.component';
 import { LoginComponent } from './login/login.component';
 import { MerciPageComponent } from './merci-page/merci-page.component';
 import { PanierComponent } from './panier/panier.component';
+import { ProduitComponent } from './produit/produit.component';
 import { RegisterComponent } from './register/register.component';
 import { UserBarVerticalComponent } from './user-bar-vertical/user-bar-vertical.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
@@ -28,7 +29,8 @@ const routes: Routes = [
 {path: 'commandeValidation', component: MerciPageComponent},
 {path: 'ficheproduit', component: FicheproduitComponent},
 {path: 'validationadresse', component: ValidationadresseComponent},
-{path: 'clientform', component: ClientformComponent},];
+{path: 'clientform', component: ClientformComponent},
+{path: 'produit', component: ProduitComponent},];
 
 
 @NgModule({

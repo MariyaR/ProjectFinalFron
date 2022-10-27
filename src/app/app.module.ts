@@ -18,6 +18,7 @@ import { MerciPageComponent } from './merci-page/merci-page.component';
 import { FicheproduitComponent } from './ficheproduit/ficheproduit.component';
 import { ValidationadresseComponent } from './validationadresse/validationadresse.component';
 import { ClientformComponent } from './clientform/clientform.component';
+import { ProduitComponent } from './produit/produit.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { ClientformComponent } from './clientform/clientform.component';
     MerciPageComponent,
     FicheproduitComponent,
     ValidationadresseComponent,
-    ClientformComponent
+    ClientformComponent,
+    ProduitComponent
   ],
   imports: [
     BrowserModule,
