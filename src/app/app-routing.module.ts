@@ -11,6 +11,7 @@ import { PanierComponent } from './panier/panier.component';
 import { RegisterComponent } from './register/register.component';
 import { UserBarVerticalComponent } from './user-bar-vertical/user-bar-vertical.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
+import { ValidationadresseComponent } from './validationadresse/validationadresse.component';
 
 const routes: Routes = [
   {path: 'login', component: LoginComponent},
@@ -24,7 +25,8 @@ const routes: Routes = [
 {path: '', redirectTo: '/about', pathMatch: 'full'},
 {path: 'userBarVertical', component: UserBarVerticalComponent},
 {path: 'commandeValidation', component: MerciPageComponent},
-{path: 'ficheproduit', component: FicheproduitComponent},];
+{path: 'ficheproduit', component: FicheproduitComponent},
+{path: 'validationadresse', component: ValidationadresseComponent},];
 
 
 @NgModule({

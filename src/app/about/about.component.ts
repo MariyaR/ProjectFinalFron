@@ -42,7 +42,7 @@ export class AboutComponent implements OnInit {
     this.panier = JSON.parse(sessionStorage.getItem("panier"));
     if (this.panier === undefined) {
       console.log("panier was undefined")
-      this.panier = new Facture;
+      this.panier = new Facture();
       sessionStorage.setItem("panier", JSON.stringify(this.panier));
       console.log("after new panier");
       console.log(sessionStorage.getItem("panier"));
@@ -67,6 +67,12 @@ export class AboutComponent implements OnInit {
     console.log(nb);
     console.log(JSON.stringify(this.x));
 
+    if (this.panier === undefined || this.panier === null) {
+      console.log("panier was undefined during adding to cart")
+      this.panier = new Facture();
+      sessionStorage.setItem("panier", JSON.stringify(this.panier));
+    }
+    
     let ligne = new Ligne();
     ligne.art = pr;
     ligne.nb = nb;

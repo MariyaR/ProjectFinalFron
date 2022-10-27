@@ -16,6 +16,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import { MerciPageComponent } from './merci-page/merci-page.component';
 import { FicheproduitComponent } from './ficheproduit/ficheproduit.component';
+import { ValidationadresseComponent } from './validationadresse/validationadresse.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { FicheproduitComponent } from './ficheproduit/ficheproduit.component';
     FooterComponent,
     UserBarVerticalComponent,
     MerciPageComponent,
-    FicheproduitComponent
+    FicheproduitComponent,
+    ValidationadresseComponent
   ],
   imports: [
     BrowserModule,
