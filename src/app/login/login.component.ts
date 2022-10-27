@@ -1,6 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Observable } from 'rxjs/internal/Observable';
 import { Client } from '../client';
 import { LoginService } from '../login.service';
 import { Utilisateur } from '../utilisateur';
@@ -16,10 +17,12 @@ export class LoginComponent implements OnInit {
   message:string;
   erreur:boolean = false;
   logged:boolean = false;
+  globalLogged : Observable<string>;
 
   constructor(private http : HttpClient, private router:Router, private srvLogin : LoginService) { }
 
   ngOnInit(): void {
+    this.globalLogged = this.srvLogin.getMyGV(); 
   }
 
   connexion()
@@ -34,6 +37,9 @@ export class LoginComponent implements OnInit {
       this.message="Authentification valide"
       sessionStorage.setItem("client",JSON.stringify(response));
       this.logged=true;
+      this.srvLogin.setMyGV("true");
+      console.log("after changing global logged");
+      console.log(this.srvLogin.getMyGV());
       sessionStorage.setItem("logged",JSON.stringify(this.logged));
       this.router.navigate(['about']);
       

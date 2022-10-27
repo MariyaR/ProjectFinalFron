@@ -46,6 +46,7 @@ export class PanierService {
       let produitTo = new ProduitTo();
       produitTo.produit = element.art;
       produitTo.quantite = element.nb;
+      console.log("taiile dans panier: " + element.taille);
       produitTo.taille = element.taille;
       this.produits.produits.push(produitTo);
     });

@@ -30,8 +30,8 @@
             </a>
           </li>
           <li class="nav-item">
-              <button *ngIf="logged" class="rechercher btn" type="button" (click) = "deconnexion()">Déconnexion</button>
-              <button *ngIf="!logged" class="rechercher btn" type="button" (click) = "connexion()">Connexion</button>
+              <button *ngIf="lgd == 'true'" class="rechercher btn" type="button" (click) = "deconnexion()">Déconnexion</button>
+              <button *ngIf="lgd == 'false'" class="rechercher btn" type="button" (click) = "connexion()">Connexion</button>
           </li>
         </ul>
       </div>

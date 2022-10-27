@@ -19,6 +19,11 @@ export class PanierComponent implements OnInit {
 
   ngOnInit(): void {
     this.panier = JSON.parse(sessionStorage.getItem("panier"));
+    if(this.panier === undefined || this.panier == null)
+        this.panier = new Facture();
+    if(this.panier.total === undefined || this.panier.total == null)
+        this.panier.total = 0;
+        this.total = 0;
     this.total = this.panier.total;
     console.log("I am panier component, here is panier:");
     console.log(this.panier)
