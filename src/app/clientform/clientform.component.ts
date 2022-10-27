@@ -60,7 +60,7 @@ export class ClientformComponent implements OnInit {
     }).subscribe(response =>{
       sessionStorage.setItem("client",JSON.stringify(response));
       this.afterSubmit.emit();
-      location.reload();
+      //location.reload();
     },
     err =>{
       this.erreur =true
