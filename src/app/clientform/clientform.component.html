@@ -1,0 +1,84 @@
+<br>
+            <form [formGroup]="editForm" role="form" style="width: 750px ;">
+                <div style="display: flex; justify-content: space-evenly ;">
+
+                    <div class="form-group">
+                        <span class="error" *ngIf="editForm.get('prenom').invalid">Champ Requis</span>
+                          Prénom : <div class="input-group input-group-merge input-group-alternative mb-3" style="width: 300px;">
+                            <div class="input-group-prepend">
+                              <span class="input-group-text" [class.success]="!editForm.get('prenom').invalid" [class.error]="editForm.get('prenom').invalid"><i class="ni ni-hat-3"></i></span>
+                            </div>
+                            <input class="form-control" formControlName="prenom" placeholder="Prenom" type="text"  name="prenom">                    
+                          </div>
+                        </div>
+
+                <div class="form-group">
+                <span class="error" *ngIf="editForm.get('nom').invalid">Champ Requis</span>
+                Nom : <div class="input-group input-group-merge input-group-alternative mb-3" style="width: 300px;">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text" [class.success]="!editForm.get('nom').invalid" [class.error]="editForm.get('nom').invalid"><i class="ni ni-hat-3" ></i></span>
+                  </div>
+                  <input class="form-control" formControlName="nom" placeholder="Nom" type="text" name="nom" [(ngModel)]="client.nom">
+                  
+                </div>
+              </div>
+                </div>
+                <div style="display: flex; justify-content:center ;">
+              <div class="form-group">
+                Téléphone : <div class="input-group input-group-merge input-group-alternative mb-3" style="width: 300px;">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="ni ni-hat-3"></i></span>
+                  </div>
+                  <input class="form-control" formControlName="telephone" placeholder="Téléphone" type="text" name="telephone">
+                </div>
+              </div>
+                </div>
+                <div style="display: flex; justify-content: space-evenly ;">
+              <div class="form-group">
+                Numéro de rue :<span class="error" *ngIf="editForm.get('num_rue').invalid">Champ Requis</span>
+                  <div class="input-group input-group-merge input-group-alternative" style="width: 300px;">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text" [class.success]="!editForm.get('num_rue').invalid" [class.error]="editForm.get('num_rue').invalid"><i class="ni ni-hat-3"></i></span>
+                    </div>
+                    <input class="form-control" formControlName="num_rue" placeholder="Numéro de rue" type="text" name="num_rue">
+                  </div>
+              </div>
+
+              <div class="form-group">
+                Rue : <span class="error" *ngIf="editForm.get('rue').invalid">Champ Requis</span>
+                <div class="input-group input-group-merge input-group-alternative" style="width: 300px;">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text" [class.success]="!editForm.get('rue').invalid" [class.error]="editForm.get('rue').invalid"><i class="ni ni-hat-3"></i></span>
+                  </div>
+                  <input class="form-control" formControlName="rue" placeholder="Rue" type="text"  name="rue">
+                </div>
+            </div>
+            </div>
+            <div style="display: flex; justify-content: space-evenly ;">
+            <div class="form-group">
+              Code postal : <span class="error" *ngIf="editForm.get('cp').invalid">Champ Requis (le CP doit contenir entre 4 et 5 chiffres)</span>
+              <div class="input-group input-group-merge input-group-alternative" style="width: 300px;">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" [class.success]="!editForm.get('cp').invalid" [class.error]="editForm.get('cp').invalid"><i class="ni ni-hat-3"></i></span>
+                </div>
+                <input class="form-control" formControlName="cp" placeholder="CP" type="text" name="cp">
+              </div>
+          </div>
+
+          <div class="form-group">
+            Ville : <span class="error" *ngIf="editForm.get('ville').invalid">Champ Requis</span>
+            <div class="input-group input-group-merge input-group-alternative" style="width: 300px;">
+              <div class="input-group-prepend">
+                <span class="input-group-text" [class.success]="!editForm.get('ville').invalid" [class.error]="editForm.get('ville').invalid"><i class="ni ni-hat-3"></i></span>
+              </div>
+              <input class="form-control" formControlName="ville" placeholder="Ville" type="text"  name="ville">   
+            </div>
+        </div>
+        </div>
+        <div class="text-center">
+          <button [disabled]="editForm.invalid" type="button" class="btn btn-warning my-4" (click)="register()">
+            Modifier les coordonnées
+          </button>
+          <div class="error" *ngIf="editForm.invalid">Le formulaire contient des erreurs</div>
+        </div>
+            </form>

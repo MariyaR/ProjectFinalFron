@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AboutComponent } from './about/about.component';
+import { ClientformComponent } from './clientform/clientform.component';
 import { EditProfileComponent } from './edit-profile/edit-profile.component';
 import { FicheproduitComponent } from './ficheproduit/ficheproduit.component';
 import { FooterComponent } from './footer/footer.component';
@@ -26,7 +27,8 @@ const routes: Routes = [
 {path: 'userBarVertical', component: UserBarVerticalComponent},
 {path: 'commandeValidation', component: MerciPageComponent},
 {path: 'ficheproduit', component: FicheproduitComponent},
-{path: 'validationadresse', component: ValidationadresseComponent},];
+{path: 'validationadresse', component: ValidationadresseComponent},
+{path: 'clientform', component: ClientformComponent},];
 
 
 @NgModule({
