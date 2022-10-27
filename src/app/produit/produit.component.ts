@@ -1,5 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Commande } from '../commande';
+import { ProduitTo } from '../produit-to';
+import { ProduitsTo } from '../produits-to';
 
 @Component({
   selector: 'app-produit',
@@ -8,7 +10,7 @@ import { Commande } from '../commande';
 })
 export class ProduitComponent implements OnInit {
 
-  @Input() commande: Commande;
+  @Input() commande: ProduitsTo;
 
   constructor() { }
 

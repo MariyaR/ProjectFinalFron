@@ -19,18 +19,18 @@
                     <th scope="row">
                         <div class="media align-items-center">
                             <a  class=" mr-3">
-                                <img  [src]="'../../assets/img/imgProducts/' + ligne.images[0].nom" style="height : 100px;"  src="">
+                                <img  [src]="'../../assets/img/imgProducts/' + ligne.produit.images[0].nom" style="height : 100px;"  src="">
                             </a>
                             <div class="media-body">
-                                <span class="name mb-0 text-sm">"{{ligne.reference}}" taille {{ligne.tailles}}</span>
+                                <span class="name mb-0 text-sm">"{{ligne.produit.reference}}" taille {{ligne.taille}}</span>
                             </div>
                         </div>
                     </th>
                     <td class="budget">
-                      <!-- {{ligne.nb}} -->
+                      {{ligne.quantite}}
                     </td>
                     <td class="budget">
-                        {{ligne.prix | number: '.2' }}€
+                        {{ligne.produit.prix | number: '.2' }}€
                     </td>
                     <td class="text-right">
                     </td>

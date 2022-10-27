@@ -2,6 +2,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Client } from '../client';
 import { Commande } from '../commande';
+import { ProduitsTo } from '../produits-to';
 
 @Component({
   selector: 'app-user-profile',
@@ -37,7 +38,7 @@ export class UserProfileComponent implements OnInit {
   modalInfoClosed = true;
   modalCommClosed = true;
   commandes:any;
-  commande:Commande;
+  commande:ProduitsTo;
 
 showInformation()
 {
