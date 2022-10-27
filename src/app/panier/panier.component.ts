@@ -63,8 +63,9 @@ export class PanierComponent implements OnInit {
     console.log("logged");
     console.log(this.logged);
     if(this.logged == String(true)) {
-      this.srvPan.sendCommande();
-      this.panier = JSON.parse(sessionStorage.getItem("panier"));
+      this.router.navigate(['validationadresse']);
+      //this.srvPan.sendCommande();
+      //this.panier = JSON.parse(sessionStorage.getItem("panier"));
     }else 
       this.router.navigate(['login']);
       console.log("panier after connexion");

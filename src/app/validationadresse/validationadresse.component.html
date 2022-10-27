@@ -68,56 +68,68 @@
             </div>
 
 
-      <div class="container-fluid w-75 mt--8">
+      <div class="container-fluid w-50 mt--8">
         <div class="row">
           <!-- Light table -->
           <div class="col">
             <div class="card">
               <!-- Card header -->
               <div class="card-header border-0">
-                <div class="d-flex" style="justify-content: flex-end ;">
-                <button class="btn btn-warning" (click)="validate()">Valider votre commande</button>
-                </div>
+                
                 <div style="text-align:center">
                     <br>
-                    <h1>Vos coordonnées</h1>
+                    <h1>Votre adresse de livraison</h1>
+                    <br>
                 </div>
-                    <div class="input-group input-group-merge input-group-alternative mb-3" >
-                      <div class="input-group-prepend">
-                        <span class="input-group-text">Nom : {{client.nom}}</span>
+                    <div style="display: flex; justify-content: space-evenly ;">
+                        <div class="input-group input-group-merge input-group-alternative mb-3" style="max-width: 35%;" >
+                            <div class="input-group-prepend">
+                              <span class="input-group-text">Prénom : {{client.prenom}}</span>
+                            </div>
+                        </div>
+                    <div class="input-group input-group-merge input-group-alternative mb-3" style="max-width: 35%;" >
+                      <div class="input-group-prepend" >
+                        <span class="input-group-text" >Nom : {{client.nom}}</span>
                       </div>
                     </div>
-                    <div class="input-group input-group-merge input-group-alternative mb-3" >
-                        <div class="input-group-prepend">
-                          <span class="input-group-text">Prénom : {{client.prenom}}</span>
-                        </div>
                     </div>
-                    <div class="input-group input-group-merge input-group-alternative mb-3" >
+                    <div style="display: flex; justify-content:center ;">
+                    <div class="input-group input-group-merge input-group-alternative mb-3" style="max-width: 35%;" >
                         <div class="input-group-prepend">
                           <span class="input-group-text">Téléphone : {{client.telephone}}</span>
                         </div>
                     </div>
-                    <div class="input-group input-group-merge input-group-alternative mb-3" >
+                    </div>
+                    <br>
+                    <div style="display: flex; justify-content: space-evenly ;">
+                    <div class="input-group input-group-merge input-group-alternative mb-3" style="max-width: 35%;">
                         <div class="input-group-prepend">
                           <span class="input-group-text">Numéro de rue : {{client.adresse.num_rue}}</span>
                         </div>
                     </div>
-                    <div class="input-group input-group-merge input-group-alternative mb-3" >
+                    <div class="input-group input-group-merge input-group-alternative mb-3" style="max-width: 35%;">
                         <div class="input-group-prepend">
                           <span class="input-group-text">Rue : {{client.adresse.rue}}</span>
                         </div>
                     </div>
-                    <div class="input-group input-group-merge input-group-alternative mb-3" >
+                     </div>
+                     <div style="display: flex; justify-content: space-evenly ;">
+                    <div class="input-group input-group-merge input-group-alternative mb-3" style="max-width: 35%;">
                         <div class="input-group-prepend">
                           <span class="input-group-text">CP : {{client.adresse.cp}}</span>
                         </div>
                     </div>
-                    <div class="input-group input-group-merge input-group-alternative mb-3" >
+                    <div class="input-group input-group-merge input-group-alternative mb-3" style="max-width: 35%;">
                         <div class="input-group-prepend">
                           <span class="input-group-text">Ville : {{client.adresse.ville}}</span>
                         </div>
                     </div>
-
+                    </div>
+                    <br>
+                    <div class="d-flex" style="justify-content: space-between ;">
+                        <button class="btn btn-warning" (click)="modifier()">Modifier vos coordonnées</button>
+                        <button class="btn btn-warning" (click)="validate()">Valider votre commande</button>
+                        </div>
               </div>
       
       </div>
@@ -126,6 +138,17 @@
     
     </div>
 
+    <!-- Modal -->
+<div class="modal" *ngIf="!modalClosed">
+    <div>
+      <div style="display: flex; justify-content: right;">
+        <button (click)="closeModal()" type="button" class="btn-close" aria-label="Close"></button>
+        </div>
+      <!--Votre contenu ici -->
+      <!-- Un nouveau composant -> personne-form-->
+      <app-clientform (afterSubmit)="closeModal()"></app-clientform>
+     </div>
+  </div>
   
 </body>
 
