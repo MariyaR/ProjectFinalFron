@@ -199,6 +199,7 @@
               
               <div class="d-flex flex-row bd-highlight mb-2">
                 <select name="tailles" id="tailles" class="form-select form-control"  #sl (change)="onSelectChange(sl.value, pr.reference)">
+                    <option [ngValue]="null">Selectioner la taille</option>
                     <option [value]="taille.tailleId.taille" *ngFor = "let taille of pr.tailles" >{{taille.tailleId.taille}}</option>
                 </select>
               </div>
