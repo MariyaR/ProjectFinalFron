@@ -17,6 +17,7 @@ import {HttpClientModule} from '@angular/common/http';
 import { MerciPageComponent } from './merci-page/merci-page.component';
 import { FicheproduitComponent } from './ficheproduit/ficheproduit.component';
 import { ValidationadresseComponent } from './validationadresse/validationadresse.component';
+import { ClientformComponent } from './clientform/clientform.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { ValidationadresseComponent } from './validationadresse/validationadress
     UserBarVerticalComponent,
     MerciPageComponent,
     FicheproduitComponent,
-    ValidationadresseComponent
+    ValidationadresseComponent,
+    ClientformComponent
   ],
   imports: [
     BrowserModule,
