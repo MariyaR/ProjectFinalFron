@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Observable } from 'rxjs';
 import { Facture } from '../facture';
+import { LoginService } from '../login.service';
 import { PanierService } from '../panier.service';
 
 @Component({
@@ -15,10 +17,14 @@ export class PanierComponent implements OnInit {
   total: number;
   logged:string;
   modalClosed = true;
+  globalLogged : Observable<string>;
+  lgd:string;
 
-  constructor(private srvPan: PanierService, private router:Router) { }
+  constructor(private srvPan: PanierService, private router:Router, private srvLogin : LoginService) { }
 
   ngOnInit(): void {
+    this.globalLogged = this.srvLogin.getMyGV(); 
+    this.globalLogged.subscribe(x => this.lgd = x);
     this.panier = JSON.parse(sessionStorage.getItem("panier"));
     if(this.panier === undefined || this.panier == null)
         this.panier = new Facture();
@@ -65,10 +71,9 @@ export class PanierComponent implements OnInit {
 
   validate(){
     //envoyer la request de validation
-    this.logged = sessionStorage.getItem("logged");
     console.log("logged");
-    console.log(this.logged);
-    if(this.logged == String(true)) {
+    console.log(this.lgd);
+    if(this.lgd == String(true)) {
       this.router.navigate(['validationadresse']);
       //this.srvPan.sendCommande();
       //this.panier = JSON.parse(sessionStorage.getItem("panier"));

@@ -30,6 +30,7 @@ export class HeaderComponent implements OnInit {
 
 deconnexion()
 {
+  console.log("I am deconnexion!!!!!")
   this.logged = !this.logged;
   this.srvLogin.setMyGV("false");
   sessionStorage.setItem("logged",JSON.stringify(this.logged));
