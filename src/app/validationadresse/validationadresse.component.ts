@@ -21,8 +21,11 @@ export class ValidationadresseComponent implements OnInit {
   constructor(private srvPan: PanierService, private router:Router) { }
 
   ngOnInit(): void {
+    if(JSON.parse(sessionStorage.getItem("logged")) === false)
+      this.router.navigate(['about']);
     this.client=JSON.parse(sessionStorage.getItem("client"))
     this.panier = JSON.parse(sessionStorage.getItem("panier"));
+    console.log(this.panier)
   }
 
   validate()
@@ -36,10 +39,12 @@ export class ValidationadresseComponent implements OnInit {
   modifier()
   {
     this.modalClosed=false;
+    
   }
 
   closeModal() {
     this.modalClosed = true;
+    this.client=JSON.parse(sessionStorage.getItem("client"));
   }
 
 }

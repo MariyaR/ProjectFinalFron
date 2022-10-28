@@ -60,6 +60,7 @@ modifier()
   closeModal() {
     this.modalInfoClosed = true;
     this.modalCommClosed = true;
+    this.client=JSON.parse(sessionStorage.getItem("client"));
   }
 
   commandesEmpty()

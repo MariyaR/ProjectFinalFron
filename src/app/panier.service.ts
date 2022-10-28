@@ -41,6 +41,11 @@ export class PanierService {
   sendCommande(){
     //this.produits.client.id = this.client;
     this.produits.client.id = JSON.parse(sessionStorage.getItem("client")).id;
+    this.panier = JSON.parse(sessionStorage.getItem("panier"));
+    if (this.panier == undefined || this.panier == null){
+      this.panier = new Facture();
+     }
+     console.log("panier to send: " + this.panier);
     console.log(this.produits.client.id);
     this.panier.lignes.forEach(element => {
       let produitTo = new ProduitTo();
